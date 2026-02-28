@@ -1,0 +1,431 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import AnimateOnScroll from '../components/AnimateOnScroll';
+
+export default function Home() {
+    const [openFaq, setOpenFaq] = useState(null);
+
+    const toggleFaq = (index) => {
+        setOpenFaq(openFaq === index ? null : index);
+    };
+
+    const faqs = [
+        {
+            q: 'What types of tiles do you offer?',
+            a: 'We offer a comprehensive range including ceramic tiles, vitrified tiles, porcelain tiles, designer wall tiles, floor tiles, kitchen tiles, bathroom tiles, and outdoor tiles from leading brands and manufacturers.',
+        },
+        {
+            q: 'Do you provide installation services?',
+            a: 'While we specialize in supplying premium quality tiles and granite, we can connect you with experienced installation professionals who ensure flawless fitting and finishing.',
+        },
+        {
+            q: 'Can I visit the showroom to see the collection?',
+            a: 'Absolutely! Our showroom at Mansarover, Jaipur is open Mon–Sat from 9 AM to 8 PM. You can explore our extensive collection and get expert guidance on selecting the perfect tiles and granite for your project.',
+        },
+        {
+            q: 'Do you offer granite for kitchen countertops?',
+            a: 'Yes! We have a stunning collection of granite slabs perfect for kitchen countertops, bathroom vanities, and table tops. Our collection includes both Indian and imported granite varieties.',
+        },
+        {
+            q: 'What is the pricing range for your products?',
+            a: 'Our pricing is competitive and varies based on the type, brand, and quality of tiles or granite. We offer options across all budget ranges from affordable to ultra-premium, ensuring there is something for everyone.',
+        },
+        {
+            q: 'Do you deliver outside Jaipur?',
+            a: 'Yes, we can arrange delivery across Rajasthan and nearby states. Delivery charges may vary depending on the distance and order quantity. Contact us for a custom quote.',
+        },
+    ];
+
+    const services = [
+        {
+            icon: '🏠',
+            title: 'Floor Tiles',
+            desc: 'Premium ceramic, vitrified, and porcelain floor tiles for every room.',
+            img: '/images/service-living.png',
+        },
+        {
+            icon: '🚿',
+            title: 'Bathroom Tiles',
+            desc: 'Elegant wall and floor tiles for luxurious bathroom transformations.',
+            img: '/images/service-bathroom.png',
+        },
+        {
+            icon: '🍽️',
+            title: 'Kitchen Solutions',
+            desc: 'Granite countertops and designer backsplash tiles for modern kitchens.',
+            img: '/images/service-kitchen.png',
+        },
+    ];
+
+    const testimonials = [
+        {
+            name: 'Rajesh Sharma',
+            role: 'Home Owner',
+            text: 'Excellent quality tiles at competitive prices. The showroom has a vast collection and the staff was very helpful in selecting the right tiles for my new home.',
+            initials: 'RS',
+        },
+        {
+            name: 'Priya Gupta',
+            role: 'Interior Designer',
+            text: 'As an interior designer, I need reliable suppliers. Neelmani Tiles never disappoints — their granite collection is outstanding and delivery is always on time.',
+            initials: 'PG',
+        },
+        {
+            name: 'Vikram Singh',
+            role: 'Builder & Contractor',
+            text: 'Been working with Neelmani Tiles for multiple projects. Their pricing is fair, quality is premium, and they always have the latest designs in stock.',
+            initials: 'VS',
+        },
+    ];
+
+    const coreValues = [
+        { icon: '💎', title: 'Premium Quality', desc: 'Only the finest tiles and granite from trusted manufacturers.' },
+        { icon: '🤝', title: 'Customer First', desc: 'Your satisfaction is our top priority in every interaction.' },
+        { icon: '🎯', title: 'Expert Guidance', desc: 'Professional advice to help you choose the perfect products.' },
+        { icon: '💰', title: 'Best Value', desc: 'Competitive pricing without compromising on quality.' },
+    ];
+
+    const whyChooseUs = [
+        { title: 'Extensive Collection', desc: 'Thousands of tiles and granite options across all styles, colors, and budgets under one roof.' },
+        { title: 'Premium Brands', desc: 'We stock products from India\'s and the world\'s most trusted tile and granite manufacturers.' },
+        { title: 'Expert Consultation', desc: 'Our experienced team helps you find the perfect match for your space and budget.' },
+        { title: 'Competitive Pricing', desc: 'Direct sourcing from manufacturers ensures the best prices for our customers.' },
+        { title: 'Trusted Since Years', desc: 'A proven track record of delivering excellence, earning trust of thousands of happy customers.' },
+        { title: 'One-Stop Solution', desc: 'From floor tiles to kitchen countertops — all types of tiles and granite available here.' },
+    ];
+
+    return (
+        <>
+            {/* ===== HERO SECTION ===== */}
+            <section className="hero" id="hero-section">
+                <div className="hero-bg">
+                    <img src="/images/hero-showroom.png" alt="Premium tiles showroom" />
+                </div>
+                <div className="hero-content">
+                    <div className="hero-text">
+                        <div className="hero-badge">
+                            <span></span> Jaipur's Premium Showroom
+                        </div>
+                        <h1 className="hero-title">
+                            Transform Your Space with{' '}
+                            <span className="gradient-text">Premium Tiles & Granite</span>
+                        </h1>
+                        <p className="hero-subtitle">
+                            Discover an exquisite collection of tiles, marble, and granite at Neelmani Tiles and Granite.
+                            Elevate your home, office, or commercial space with elegance and durability.
+                        </p>
+                        <div className="hero-buttons">
+                            <Link to="/services" className="btn btn-primary">
+                                Explore Collection →
+                            </Link>
+                            <Link to="/contact" className="btn btn-secondary">
+                                Visit Showroom
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="hero-visual">
+                        <div className="hero-image-container">
+                            <img src="/images/marble-texture.png" alt="Premium marble texture" />
+                        </div>
+                        <div className="hero-floating-card card-1">
+                            <div className="floating-card-stat">500+</div>
+                            <div className="floating-card-label">Happy Clients</div>
+                        </div>
+                        <div className="hero-floating-card card-2">
+                            <div className="floating-card-stat">10+</div>
+                            <div className="floating-card-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ===== KEY METRICS ===== */}
+            <section className="metrics" id="metrics-section">
+                <div className="metrics-grid">
+                    {[
+                        { icon: '🏆', number: '10+', label: 'Years of Experience' },
+                        { icon: '🏠', number: '1000+', label: 'Projects Completed' },
+                        { icon: '😊', number: '500+', label: 'Happy Clients' },
+                        { icon: '🎨', number: '5000+', label: 'Tile Designs' },
+                    ].map((item, i) => (
+                        <AnimateOnScroll key={i} delay={i * 0.1}>
+                            <div className="metric-card">
+                                <div className="metric-icon">{item.icon}</div>
+                                <div className="metric-number">{item.number}</div>
+                                <div className="metric-label">{item.label}</div>
+                            </div>
+                        </AnimateOnScroll>
+                    ))}
+                </div>
+            </section>
+
+            {/* ===== ABOUT PREVIEW ===== */}
+            <section className="about-preview" id="about-preview-section">
+                <div className="about-preview-grid">
+                    <AnimateOnScroll>
+                        <div className="about-preview-image">
+                            <img src="/images/about-team.png" alt="Neelmani Tiles showroom" />
+                        </div>
+                    </AnimateOnScroll>
+                    <AnimateOnScroll delay={0.2}>
+                        <div>
+                            <span className="section-label">About Us</span>
+                            <h2 className="section-title">
+                                Your Trusted Partner for <span className="gradient-text">Tiles & Granite</span>
+                            </h2>
+                            <p className="section-subtitle" style={{ marginBottom: '20px' }}>
+                                Neelmani Tiles and Granite is Jaipur's premium destination for all types of tiles, marble,
+                                and granite. With over a decade of experience, we bring you the finest collection sourced
+                                from the best manufacturers across India and the world.
+                            </p>
+                            <p className="section-subtitle" style={{ marginBottom: '32px' }}>
+                                Our mission is to help you transform your spaces into stunning masterpieces with quality
+                                products, expert guidance, and competitive pricing.
+                            </p>
+                            <Link to="/about" className="btn btn-primary">
+                                Learn More About Us →
+                            </Link>
+                        </div>
+                    </AnimateOnScroll>
+                </div>
+            </section>
+
+            {/* ===== SERVICES PREVIEW ===== */}
+            <section className="services-section" id="services-section">
+                <div className="text-center" style={{ maxWidth: 'var(--container-max)', margin: '0 auto' }}>
+                    <AnimateOnScroll>
+                        <span className="section-label">Our Services</span>
+                        <h2 className="section-title">
+                            Premium <span className="gradient-text">Tiles & Granite</span> Solutions
+                        </h2>
+                        <p className="section-subtitle center">
+                            All types of Tiles and Granite are available here. From floor tiles to kitchen countertops,
+                            we have everything you need.
+                        </p>
+                    </AnimateOnScroll>
+                </div>
+                <div className="services-grid">
+                    {services.map((service, i) => (
+                        <AnimateOnScroll key={i} delay={i * 0.15}>
+                            <div className="service-card">
+                                <div className="service-card-image">
+                                    <img src={service.img} alt={service.title} />
+                                </div>
+                                <div className="service-card-body">
+                                    <div className="service-card-icon">{service.icon}</div>
+                                    <h3>{service.title}</h3>
+                                    <p>{service.desc}</p>
+                                </div>
+                            </div>
+                        </AnimateOnScroll>
+                    ))}
+                </div>
+                <AnimateOnScroll>
+                    <div className="text-center" style={{ marginTop: '40px' }}>
+                        <Link to="/services" className="btn btn-secondary">
+                            View All Services →
+                        </Link>
+                    </div>
+                </AnimateOnScroll>
+            </section>
+
+            {/* ===== MISSION & VISION ===== */}
+            <section className="mission-vision" id="mission-vision-section">
+                <div className="text-center">
+                    <AnimateOnScroll>
+                        <span className="section-label">Mission & Vision</span>
+                        <h2 className="section-title">
+                            Driven by <span className="gradient-text">Excellence</span>
+                        </h2>
+                    </AnimateOnScroll>
+                </div>
+                <div className="mv-grid">
+                    <AnimateOnScroll>
+                        <div className="mv-card">
+                            <div className="mv-card-icon">🎯</div>
+                            <h3>Our Mission</h3>
+                            <p>
+                                To be Jaipur's most trusted tiles and granite provider by offering an unmatched
+                                selection of premium quality products at competitive prices. We aim to simplify the
+                                process of transforming spaces, providing expert guidance and personalized service
+                                that exceeds customer expectations.
+                            </p>
+                        </div>
+                    </AnimateOnScroll>
+                    <AnimateOnScroll delay={0.15}>
+                        <div className="mv-card">
+                            <div className="mv-card-icon">🔭</div>
+                            <h3>Our Vision</h3>
+                            <p>
+                                To become the leading tiles and granite showroom in Rajasthan, recognized for our
+                                vast collection, exceptional customer service, and commitment to quality. We envision
+                                helping thousands of families and businesses create spaces that inspire and endure for
+                                generations.
+                            </p>
+                        </div>
+                    </AnimateOnScroll>
+                </div>
+            </section>
+
+            {/* ===== CORE VALUES ===== */}
+            <section className="core-values" id="core-values-section">
+                <div className="text-center">
+                    <AnimateOnScroll>
+                        <span className="section-label">Core Values</span>
+                        <h2 className="section-title">
+                            What We <span className="gradient-text">Stand For</span>
+                        </h2>
+                    </AnimateOnScroll>
+                </div>
+                <div className="values-grid">
+                    {coreValues.map((val, i) => (
+                        <AnimateOnScroll key={i} delay={i * 0.1}>
+                            <div className="value-card">
+                                <div className="value-icon">{val.icon}</div>
+                                <h3>{val.title}</h3>
+                                <p>{val.desc}</p>
+                            </div>
+                        </AnimateOnScroll>
+                    ))}
+                </div>
+            </section>
+
+            {/* ===== WHY CHOOSE US ===== */}
+            <section className="why-choose" id="why-choose-section">
+                <div className="text-center">
+                    <AnimateOnScroll>
+                        <span className="section-label">Why Choose Us</span>
+                        <h2 className="section-title">
+                            The <span className="gradient-text">Neelmani</span> Advantage
+                        </h2>
+                        <p className="section-subtitle center">
+                            Here's why thousands of customers trust Neelmani Tiles and Granite for their projects.
+                        </p>
+                    </AnimateOnScroll>
+                </div>
+                <div className="why-grid">
+                    {whyChooseUs.map((item, i) => (
+                        <AnimateOnScroll key={i} delay={i * 0.1}>
+                            <div className="why-card">
+                                <span className="why-number">0{i + 1}</span>
+                                <h3>{item.title}</h3>
+                                <p>{item.desc}</p>
+                            </div>
+                        </AnimateOnScroll>
+                    ))}
+                </div>
+            </section>
+
+            {/* ===== CTA SECTION ===== */}
+            <section className="cta-section" id="cta-section">
+                <AnimateOnScroll>
+                    <div className="cta-inner">
+                        <h2>
+                            Ready to <span className="gradient-text">Transform</span> Your Space?
+                        </h2>
+                        <p>
+                            Visit our showroom or call us today to explore the finest collection of tiles and granite in Jaipur.
+                        </p>
+                        <div className="cta-buttons">
+                            <a href="tel:+917877702774" className="btn btn-primary">
+                                📞 Call Now: +91 7877702774
+                            </a>
+                            <a
+                                href="https://wa.me/917877702774?text=Hello%2C%20I%20am%20interested%20in%20your%20tiles%20and%20granite%20products."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-whatsapp"
+                            >
+                                💬 WhatsApp Us
+                            </a>
+                            <Link to="/contact" className="btn btn-secondary">
+                                📍 Visit Showroom
+                            </Link>
+                        </div>
+                    </div>
+                </AnimateOnScroll>
+            </section>
+
+            {/* ===== TESTIMONIALS PREVIEW ===== */}
+            <section className="testimonials-section" id="testimonials-section">
+                <div className="text-center">
+                    <AnimateOnScroll>
+                        <span className="section-label">Testimonials</span>
+                        <h2 className="section-title">
+                            What Our <span className="gradient-text">Customers Say</span>
+                        </h2>
+                        <p className="section-subtitle center">
+                            Don't just take our word for it — hear from our satisfied customers.
+                        </p>
+                    </AnimateOnScroll>
+                </div>
+                <div className="testimonials-grid">
+                    {testimonials.map((t, i) => (
+                        <AnimateOnScroll key={i} delay={i * 0.15}>
+                            <div className="testimonial-card">
+                                <div className="testimonial-quote-icon">"</div>
+                                <div className="testimonial-stars">
+                                    {[...Array(5)].map((_, j) => (
+                                        <span key={j} className="star">★</span>
+                                    ))}
+                                </div>
+                                <p className="testimonial-text">{t.text}</p>
+                                <div className="testimonial-author">
+                                    <div className="testimonial-avatar">{t.initials}</div>
+                                    <div className="testimonial-author-info">
+                                        <h4>{t.name}</h4>
+                                        <p>{t.role}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </AnimateOnScroll>
+                    ))}
+                </div>
+                <AnimateOnScroll>
+                    <div className="text-center" style={{ marginTop: '40px' }}>
+                        <Link to="/testimonials" className="btn btn-secondary">
+                            Read All Testimonials →
+                        </Link>
+                    </div>
+                </AnimateOnScroll>
+            </section>
+
+            {/* ===== FAQ SECTION ===== */}
+            <section className="faq-section" id="faq-section">
+                <div className="text-center">
+                    <AnimateOnScroll>
+                        <span className="section-label">FAQ</span>
+                        <h2 className="section-title">
+                            Frequently Asked <span className="gradient-text">Questions</span>
+                        </h2>
+                        <p className="section-subtitle center">
+                            Find answers to common questions about our products and services.
+                        </p>
+                    </AnimateOnScroll>
+                </div>
+                <div className="faq-list">
+                    {faqs.map((faq, i) => (
+                        <AnimateOnScroll key={i} delay={i * 0.08}>
+                            <div className="faq-item">
+                                <div className="faq-question" onClick={() => toggleFaq(i)}>
+                                    <span>{faq.q}</span>
+                                    <span className={`faq-toggle ${openFaq === i ? 'open' : ''}`}>+</span>
+                                </div>
+                                <div className={`faq-answer ${openFaq === i ? 'open' : ''}`}>
+                                    <p>{faq.a}</p>
+                                </div>
+                            </div>
+                        </AnimateOnScroll>
+                    ))}
+                </div>
+                <AnimateOnScroll>
+                    <div className="text-center" style={{ marginTop: '40px' }}>
+                        <Link to="/contact" className="btn btn-primary">
+                            Still Have Questions? Contact Us →
+                        </Link>
+                    </div>
+                </AnimateOnScroll>
+            </section>
+        </>
+    );
+}

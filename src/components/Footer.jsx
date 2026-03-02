@@ -56,7 +56,7 @@ export default function Footer() {
                     </div>
                     <div className="footer-contact-item">
                         <span className="footer-contact-icon">📞</span>
-                        <span><a href="tel:+917877702774" style={{ color: '#c9a96e' }}>+91 7877702774</a></span>
+                        <span><a href="tel:+917877702774" style={{ color: '#6EC6CA' }}>+91 7877702774</a></span>
                     </div>
                     <div className="footer-contact-item">
                         <span className="footer-contact-icon">⏰</span>

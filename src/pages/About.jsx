@@ -80,7 +80,7 @@ export default function About() {
                             <div className="about-highlights">
                                 {highlights.map((h, i) => (
                                     <div key={i} className="about-highlight-item">
-                                        <span className="about-highlight-icon" style={{ color: '#c9a96e' }}>
+                                        <span className="about-highlight-icon" style={{ color: '#089F9D' }}>
                                             {h.split(' ')[0]}
                                         </span>
                                         <span>{h.substring(2)}</span>
@@ -109,11 +109,11 @@ export default function About() {
                                 <div style={{
                                     display: 'inline-block',
                                     padding: '4px 14px',
-                                    background: 'rgba(201, 169, 110, 0.15)',
+                                    background: 'rgba(8, 159, 157, 0.1)',
                                     borderRadius: '100px',
                                     fontSize: '12px',
                                     fontWeight: '700',
-                                    color: '#c9a96e',
+                                    color: '#089F9D',
                                     fontFamily: 'var(--font-accent)',
                                     letterSpacing: '1px',
                                     textTransform: 'uppercase',

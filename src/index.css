@@ -255,13 +255,15 @@ h6 {
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--purple);
-  border: 1.5px solid rgba(132, 116, 161, 0.35);
+  border: 1.5px solid rgba(132, 116, 161, 0.4);
 }
 
 .btn-secondary:hover {
-  background: rgba(132, 116, 161, 0.08);
+  background: rgba(255, 255, 255, 0.6);
   border-color: var(--purple);
   transform: translateY(-2px);
 }
@@ -2146,11 +2148,22 @@ h6 {
   .hero-buttons {
     flex-direction: column;
     width: 100%;
+    max-width: 280px;
+    /* Reduced container width */
+    margin: 32px auto 0;
+    /* Centered */
+    gap: 10px;
   }
 
   .hero-buttons .btn {
     width: 100%;
     justify-content: center;
+    padding: 12px 20px;
+    /* Reduced vertical and horizontal padding */
+    font-size: 14px;
+    /* Reduced font size */
+    border-radius: var(--radius-sm);
+    /* Slightly sharper corners for smaller size */
   }
 
   .metrics-grid {

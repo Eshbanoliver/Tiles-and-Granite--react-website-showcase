@@ -859,47 +859,94 @@ h6 {
 }
 
 .metric-card {
+  position: relative;
   text-align: center;
-  padding: 40px 24px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+  padding: 45px 24px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-lg);
   transition: all var(--transition-smooth);
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(8, 159, 157, 0.15);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.6s ease;
+}
+
+.metric-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 130px;
+  height: 130px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.6s ease;
 }
 
 .metric-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(8, 159, 157, 0.3);
-  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(8, 159, 157, 0.4);
+}
+
+.metric-card:hover::before {
+  transform: scale(1.2) translate(-10px, 10px);
+}
+
+.metric-card:hover::after {
+  transform: scale(1.1) translate(10px, -10px);
 }
 
 .metric-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 16px;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(8, 159, 157, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-md);
-  font-size: 24px;
+  color: white;
+  font-size: 26px;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover .metric-icon {
+  background: white;
+  color: var(--teal);
+  transform: rotateY(180deg);
 }
 
 .metric-number {
   font-family: var(--font-heading);
   font-size: 42px;
   font-weight: 800;
-  color: var(--teal);
+  color: white;
   line-height: 1;
   margin-bottom: 8px;
 }
 
 .metric-label {
   font-size: 14px;
-  color: var(--text-muted);
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 /* ===== ABOUT PREVIEW ===== */

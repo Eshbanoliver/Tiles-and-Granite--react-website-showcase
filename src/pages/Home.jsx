@@ -10,7 +10,11 @@ import {
     MapPin,
     ChevronRight,
     Star,
-    Plus
+    Plus,
+    ShieldCheck,
+    Award,
+    Headset,
+    Truck
 } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
@@ -218,10 +222,10 @@ export default function Home() {
             <section className="metrics" id="metrics-section">
                 <div className="metrics-grid">
                     {[
-                        { icon: <Trophy size={32} />, number: '10+', label: 'Years of Experience' },
-                        { icon: <HomeIcon size={32} />, number: '1000+', label: 'Projects Completed' },
-                        { icon: <Users size={32} />, number: '500+', label: 'Happy Clients' },
-                        { icon: <Palette size={32} />, number: '5000+', label: 'Tile Designs' },
+                        { icon: <ShieldCheck size={32} />, number: '50+', label: 'Premium Brands' },
+                        { icon: <Award size={32} />, number: '100%', label: 'Quality Assurance' },
+                        { icon: <Headset size={32} />, number: '24/7', label: 'Expert Support' },
+                        { icon: <Truck size={32} />, number: '100%', label: 'Safe Delivery' },
                     ].map((item, i) => (
                         <AnimateOnScroll key={i} delay={i * 0.1}>
                             <div className="metric-card">

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Star, MapPin, Phone } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
 export default function Testimonials() {
@@ -91,9 +92,9 @@ export default function Testimonials() {
                     <AnimateOnScroll>
                         <div className="metric-card">
                             <div className="metric-number">4.9</div>
-                            <div className="testimonial-stars" style={{ justifyContent: 'center', marginBottom: '4px' }}>
+                            <div className="testimonial-stars" style={{ justifyContent: 'center', marginBottom: '12px', marginTop: '8px' }}>
                                 {[...Array(5)].map((_, i) => (
-                                    <span key={i} className="star">★</span>
+                                    <Star key={i} size={18} fill="#FFD700" color="#FFD700" />
                                 ))}
                             </div>
                             <div className="metric-label">Average Rating</div>
@@ -132,10 +133,10 @@ export default function Testimonials() {
                                 <div className="testimonial-quote-icon">"</div>
                                 <div className="testimonial-stars">
                                     {[...Array(t.stars)].map((_, j) => (
-                                        <span key={j} className="star">★</span>
+                                        <Star key={j} size={16} fill="#FFD700" color="#FFD700" />
                                     ))}
                                     {[...Array(5 - t.stars)].map((_, j) => (
-                                        <span key={j} className="star" style={{ opacity: 0.2 }}>★</span>
+                                        <Star key={j} size={16} color="#DDD" />
                                     ))}
                                 </div>
                                 <p className="testimonial-text">{t.text}</p>
@@ -164,10 +165,10 @@ export default function Testimonials() {
                         </p>
                         <div className="cta-buttons">
                             <Link to="/contact" className="btn btn-primary">
-                                📍 Visit Showroom
+                                <MapPin size={18} style={{ marginRight: '8px' }} /> Visit Showroom
                             </Link>
                             <a href="tel:+917877702774" className="btn btn-secondary">
-                                📞 Call: +91 7877702774
+                                <Phone size={18} style={{ marginRight: '8px' }} /> Call Now
                             </a>
                         </div>
                     </div>

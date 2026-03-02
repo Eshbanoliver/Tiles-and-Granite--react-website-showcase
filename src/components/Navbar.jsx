@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+import { Landmark } from 'lucide-react';
+
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,7 +32,9 @@ export default function Navbar() {
             <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="main-navbar">
                 <div className="navbar-inner">
                     <Link to="/" className="nav-logo">
-                        <div className="nav-logo-icon">🏛️</div>
+                        <div className="nav-logo-icon">
+                            <Landmark size={24} strokeWidth={2} />
+                        </div>
                         <span>
                             Neelmani <span className="gradient-text">Tiles</span>
                         </span>

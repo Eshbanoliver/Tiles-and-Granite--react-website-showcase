@@ -1,5 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import {
+    Trophy,
+    Users,
+    Home as HomeIcon,
+    Palette,
+    Phone,
+    MessageCircle,
+    MapPin,
+    ChevronRight,
+    Star,
+    Plus
+} from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
 export default function Home() {
@@ -170,10 +182,10 @@ export default function Home() {
                                 <div className="hero-visual">
                                     <div className="hero-metrics-grid">
                                         {[
-                                            { num: '10+', label: 'Years Experience', icon: '🏆' },
-                                            { num: '500+', label: 'Happy Clients', icon: '😊' },
-                                            { num: '1000+', label: 'Projects Done', icon: '🏠' },
-                                            { num: '5000+', label: 'Designs', icon: '🎨' }
+                                            { num: '10+', label: 'Years Experience', icon: <Trophy size={18} /> },
+                                            { num: '500+', label: 'Happy Clients', icon: <Users size={18} /> },
+                                            { num: '1000+', label: 'Projects Done', icon: <HomeIcon size={18} /> },
+                                            { num: '5000+', label: 'Designs', icon: <Palette size={18} /> }
                                         ].map((m, i) => (
                                             <div key={i} className={`liquid-glass-card metric-${i + 1}`}>
                                                 <div className="metric-icon-small">{m.icon}</div>
@@ -206,10 +218,10 @@ export default function Home() {
             <section className="metrics" id="metrics-section">
                 <div className="metrics-grid">
                     {[
-                        { icon: '🏆', number: '10+', label: 'Years of Experience' },
-                        { icon: '🏠', number: '1000+', label: 'Projects Completed' },
-                        { icon: '😊', number: '500+', label: 'Happy Clients' },
-                        { icon: '🎨', number: '5000+', label: 'Tile Designs' },
+                        { icon: <Trophy size={32} />, number: '10+', label: 'Years of Experience' },
+                        { icon: <HomeIcon size={32} />, number: '1000+', label: 'Projects Completed' },
+                        { icon: <Users size={32} />, number: '500+', label: 'Happy Clients' },
+                        { icon: <Palette size={32} />, number: '5000+', label: 'Tile Designs' },
                     ].map((item, i) => (
                         <AnimateOnScroll key={i} delay={i * 0.1}>
                             <div className="metric-card">
@@ -246,7 +258,7 @@ export default function Home() {
                                 products, expert guidance, and competitive pricing.
                             </p>
                             <Link to="/about" className="btn btn-primary">
-                                Learn More About Us →
+                                Learn More About Us <ChevronRight size={18} style={{ marginLeft: '4px' }} />
                             </Link>
                         </div>
                     </AnimateOnScroll>
@@ -391,7 +403,7 @@ export default function Home() {
                         </p>
                         <div className="cta-buttons">
                             <a href="tel:+917877702774" className="btn btn-primary">
-                                📞 Call Now: +91 7877702774
+                                <Phone size={18} style={{ marginRight: '8px' }} /> Call Now: +91 7877702774
                             </a>
                             <a
                                 href="https://wa.me/917877702774?text=Hello%2C%20I%20am%20interested%20in%20your%20tiles%20and%20granite%20products."
@@ -399,10 +411,10 @@ export default function Home() {
                                 rel="noopener noreferrer"
                                 className="btn btn-whatsapp"
                             >
-                                💬 WhatsApp Us
+                                <MessageCircle size={18} style={{ marginRight: '8px' }} /> WhatsApp Us
                             </a>
                             <Link to="/contact" className="btn btn-secondary">
-                                📍 Visit Showroom
+                                <MapPin size={18} style={{ marginRight: '8px' }} /> Visit Showroom
                             </Link>
                         </div>
                     </div>
@@ -429,7 +441,7 @@ export default function Home() {
                                 <div className="testimonial-quote-icon">"</div>
                                 <div className="testimonial-stars">
                                     {[...Array(5)].map((_, j) => (
-                                        <span key={j} className="star">★</span>
+                                        <Star key={j} size={14} fill="#FFD700" color="#FFD700" />
                                     ))}
                                 </div>
                                 <p className="testimonial-text">{t.text}</p>
@@ -447,7 +459,7 @@ export default function Home() {
                 <AnimateOnScroll>
                     <div className="text-center" style={{ marginTop: '40px' }}>
                         <Link to="/testimonials" className="btn btn-secondary">
-                            Read All Testimonials →
+                            Read All Testimonials <ChevronRight size={18} style={{ marginLeft: '4px' }} />
                         </Link>
                     </div>
                 </AnimateOnScroll>
@@ -472,7 +484,9 @@ export default function Home() {
                             <div className="faq-item">
                                 <div className="faq-question" onClick={() => toggleFaq(i)}>
                                     <span>{faq.q}</span>
-                                    <span className={`faq-toggle ${openFaq === i ? 'open' : ''}`}>+</span>
+                                    <span className={`faq-toggle ${openFaq === i ? 'open' : ''}`}>
+                                        <Plus size={20} />
+                                    </span>
                                 </div>
                                 <div className={`faq-answer ${openFaq === i ? 'open' : ''}`}>
                                     <p>{faq.a}</p>
@@ -484,7 +498,7 @@ export default function Home() {
                 <AnimateOnScroll>
                     <div className="text-center" style={{ marginTop: '40px' }}>
                         <Link to="/contact" className="btn btn-primary">
-                            Still Have Questions? Contact Us →
+                            Still Have Questions? Contact Us <ChevronRight size={18} style={{ marginLeft: '4px' }} />
                         </Link>
                     </div>
                 </AnimateOnScroll>

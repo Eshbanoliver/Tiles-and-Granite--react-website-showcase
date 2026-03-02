@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MapPin, Phone, MessageCircle, Clock, Send } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
 export default function Contact() {
@@ -48,7 +49,9 @@ export default function Contact() {
                                 <h3>Get In Touch</h3>
 
                                 <div className="contact-info-item">
-                                    <div className="contact-info-icon">📍</div>
+                                    <div className="contact-info-icon">
+                                        <MapPin size={20} color="#089F9D" />
+                                    </div>
                                     <div className="contact-info-text">
                                         <h4>Visit Our Showroom</h4>
                                         <p>
@@ -59,7 +62,9 @@ export default function Contact() {
                                 </div>
 
                                 <div className="contact-info-item">
-                                    <div className="contact-info-icon">📞</div>
+                                    <div className="contact-info-icon">
+                                        <Phone size={20} color="#089F9D" />
+                                    </div>
                                     <div className="contact-info-text">
                                         <h4>Call Us</h4>
                                         <p>
@@ -69,7 +74,9 @@ export default function Contact() {
                                 </div>
 
                                 <div className="contact-info-item">
-                                    <div className="contact-info-icon">💬</div>
+                                    <div className="contact-info-icon">
+                                        <MessageCircle size={20} color="#089F9D" />
+                                    </div>
                                     <div className="contact-info-text">
                                         <h4>WhatsApp</h4>
                                         <p>
@@ -85,7 +92,9 @@ export default function Contact() {
                                 </div>
 
                                 <div className="contact-info-item">
-                                    <div className="contact-info-icon">⏰</div>
+                                    <div className="contact-info-icon">
+                                        <Clock size={20} color="#089F9D" />
+                                    </div>
                                     <div className="contact-info-text">
                                         <h4>Business Hours</h4>
                                         <p>Monday – Saturday: 9:00 AM – 8:00 PM</p>
@@ -188,7 +197,7 @@ export default function Contact() {
                                     </div>
 
                                     <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                                        💬 Send via WhatsApp
+                                        <MessageCircle size={18} style={{ marginRight: '8px' }} /> Send via WhatsApp
                                     </button>
                                 </form>
 
@@ -198,7 +207,7 @@ export default function Contact() {
                                     </p>
                                     <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                                         <a href="tel:+917877702774" className="btn btn-secondary" style={{ padding: '10px 20px', fontSize: '14px' }}>
-                                            📞 Call Now
+                                            <Phone size={14} style={{ marginRight: '6px' }} /> Call Now
                                         </a>
                                         <a
                                             href="https://wa.me/917877702774"
@@ -207,7 +216,7 @@ export default function Contact() {
                                             className="btn btn-whatsapp"
                                             style={{ padding: '10px 20px', fontSize: '14px' }}
                                         >
-                                            💬 WhatsApp
+                                            <MessageCircle size={14} style={{ marginRight: '6px' }} /> WhatsApp
                                         </a>
                                     </div>
                                 </div>
@@ -229,7 +238,7 @@ export default function Contact() {
                         </p>
                         <div className="cta-buttons">
                             <a href="tel:+917877702774" className="btn btn-primary">
-                                📞 Call: +91 7877702774
+                                <Phone size={18} style={{ marginRight: '8px' }} /> Call Now
                             </a>
                             <a
                                 href="https://wa.me/917877702774?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products."
@@ -237,7 +246,7 @@ export default function Contact() {
                                 rel="noopener noreferrer"
                                 className="btn btn-whatsapp"
                             >
-                                💬 WhatsApp Us
+                                <MessageCircle size={18} style={{ marginRight: '8px' }} /> WhatsApp Us
                             </a>
                         </div>
                     </div>

@@ -2039,9 +2039,10 @@ h6 {
   }
 
   .hero-metrics-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
     width: 100%;
+    gap: 12px;
   }
 
   .hero-slider,
@@ -2230,9 +2231,14 @@ h6 {
   }
 
   .floating-btn {
-    width: 46px;
-    height: 46px;
-    font-size: 20px;
+    width: 65px;
+    height: 65px;
+    font-size: 28px;
+  }
+
+  .floating-btn svg {
+    width: 32px;
+    height: 32px;
   }
 
   .scroll-to-top {
@@ -2283,13 +2289,14 @@ h6 {
   }
 
   .section-title {
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 12px;
   }
 
   .hero-metrics-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
   }
 
   .section-subtitle {
@@ -2297,7 +2304,21 @@ h6 {
   }
 
   .liquid-glass-card {
-    padding: 18px;
+    padding: 12px 10px;
+    min-height: 72px;
+    gap: 8px;
+  }
+
+  .metric-num-small {
+    font-size: 15px;
+  }
+
+  .metric-label-small {
+    font-size: 10px;
+  }
+
+  .metric-icon-small {
+    font-size: 18px;
   }
 
   .footer-bottom {

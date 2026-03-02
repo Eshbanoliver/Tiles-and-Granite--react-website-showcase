@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
+import { Check, Target, Eye, MapPin, Phone } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
 export default function About() {
     const highlights = [
-        '✓ 10+ years of industry experience',
-        '✓ 5000+ tile designs available',
-        '✓ Trusted by 500+ happy families',
-        '✓ Premium brands at best prices',
-        '✓ Expert guidance & consultation',
-        '✓ Serving all across Rajasthan',
+        '10+ years of industry experience',
+        '5000+ tile designs available',
+        'Trusted by 500+ happy families',
+        'Premium brands at best prices',
+        'Expert guidance & consultation',
+        'Serving all across Rajasthan',
     ];
 
     const timeline = [
@@ -80,10 +81,10 @@ export default function About() {
                             <div className="about-highlights">
                                 {highlights.map((h, i) => (
                                     <div key={i} className="about-highlight-item">
-                                        <span className="about-highlight-icon" style={{ color: '#089F9D' }}>
-                                            {h.split(' ')[0]}
+                                        <span className="about-highlight-icon">
+                                            <Check size={18} />
                                         </span>
-                                        <span>{h.substring(2)}</span>
+                                        <span>{h}</span>
                                     </div>
                                 ))}
                             </div>
@@ -142,7 +143,9 @@ export default function About() {
                 <div className="mv-grid">
                     <AnimateOnScroll>
                         <div className="mv-card">
-                            <div className="mv-card-icon">🎯</div>
+                            <div className="mv-card-icon">
+                                <Target size={32} color="#089F9D" />
+                            </div>
                             <h3>Our Mission</h3>
                             <p>
                                 To be Jaipur's most trusted tiles and granite provider by offering an unmatched
@@ -154,7 +157,9 @@ export default function About() {
                     </AnimateOnScroll>
                     <AnimateOnScroll delay={0.15}>
                         <div className="mv-card">
-                            <div className="mv-card-icon">🔭</div>
+                            <div className="mv-card-icon">
+                                <Eye size={32} color="#089F9D" />
+                            </div>
                             <h3>Our Vision</h3>
                             <p>
                                 To become the leading tiles and granite showroom in Rajasthan, recognized for our
@@ -179,10 +184,10 @@ export default function About() {
                         </p>
                         <div className="cta-buttons">
                             <Link to="/contact" className="btn btn-primary">
-                                📍 Visit Showroom
+                                <MapPin size={18} style={{ marginRight: '8px' }} /> Visit Showroom
                             </Link>
                             <a href="tel:+917877702774" className="btn btn-secondary">
-                                📞 Call Us Now
+                                <Phone size={18} style={{ marginRight: '8px' }} /> Call Us Now
                             </a>
                         </div>
                     </div>

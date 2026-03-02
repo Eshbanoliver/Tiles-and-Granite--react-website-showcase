@@ -1,52 +1,71 @@
 import { Link } from 'react-router-dom';
+import {
+    Home,
+    Layout,
+    Droplets,
+    UtensilsCrossed,
+    Landmark,
+    Sparkles,
+    Building2,
+    HardHat,
+    Factory,
+    Star,
+    Gem,
+    ShieldCheck,
+    Palette,
+    Phone,
+    MessageCircle,
+    MapPin,
+    ChevronRight
+} from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
 export default function Services() {
     const services = [
         {
-            icon: '🏠',
+            icon: <Home size={24} />,
             title: 'Floor Tiles',
             desc: 'Transform your floors with our premium collection of ceramic, vitrified, and porcelain tiles. Available in a wide range of sizes, patterns, and finishes for every room.',
             img: '/images/service-living.png',
         },
         {
-            icon: '🧱',
+            icon: <Layout size={24} />,
             title: 'Wall Tiles',
             desc: 'Elevate your walls with exquisite designer tiles. From subtle textures to bold patterns, our wall tile collection adds character and style to any space.',
             img: '/images/marble-texture.png',
         },
         {
-            icon: '🚿',
+            icon: <Droplets size={24} />,
             title: 'Bathroom Tiles',
             desc: 'Create spa-like bathrooms with our specialized bathroom tile collection. Water-resistant, anti-skid, and available in stunning designs for both walls and floors.',
             img: '/images/service-bathroom.png',
         },
         {
-            icon: '🍽️',
+            icon: <UtensilsCrossed size={24} />,
             title: 'Kitchen Countertops',
             desc: 'Premium granite and marble countertops that combine beauty with durability. Heat-resistant, scratch-proof, and available in various colors and patterns.',
             img: '/images/service-kitchen.png',
         },
         {
-            icon: '🏛️',
+            icon: <Landmark size={24} />,
             title: 'Granite Slabs',
             desc: 'Explore our vast collection of Indian and imported granite slabs. Perfect for countertops, flooring, stairs, and decorative elements with natural beauty.',
             img: '/images/hero-showroom.png',
         },
         {
-            icon: '✨',
+            icon: <Sparkles size={24} />,
             title: 'Marble & Stone',
             desc: 'Timeless elegance with premium marble varieties including Italian marble, Indian marble, and natural stone. Each piece is unique and adds luxury to your space.',
             img: '/images/marble-texture.png',
         },
         {
-            icon: '🏢',
+            icon: <Building2 size={24} />,
             title: 'Commercial Flooring',
             desc: 'Durable and elegant flooring solutions for offices, showrooms, hotels, and commercial properties. High-traffic-resistant tiles that maintain their beauty.',
             img: '/images/service-living.png',
         },
         {
-            icon: '🏗️',
+            icon: <HardHat size={24} />,
             title: 'Exterior & Elevation',
             desc: 'Weather-resistant exterior tiles and elevation cladding that enhance your building\'s facade. UV-resistant and low-maintenance options available.',
             img: '/images/hero-showroom.png',
@@ -130,14 +149,14 @@ export default function Services() {
                 </div>
                 <div className="values-grid">
                     {[
-                        { icon: '🏢', title: 'Kajaria', desc: 'India\'s No.1 tile brand with world-class quality.' },
-                        { icon: '🏭', title: 'Somany', desc: 'Premium tiles known for durability and design.' },
-                        { icon: '✨', title: 'Johnson', desc: 'Innovative tiles with cutting-edge technology.' },
-                        { icon: '🌟', title: 'Nitco', desc: 'Italian-inspired designs with Indian craftsmanship.' },
-                        { icon: '💎', title: 'RAK Ceramics', desc: 'Global brand known for premium quality.' },
-                        { icon: '🏗️', title: 'Asian Granito', desc: 'Wide range of tiles and marble products.' },
-                        { icon: '⭐', title: 'Simpolo', desc: 'Designer tiles for modern interiors.' },
-                        { icon: '🎨', title: '& Many More', desc: 'Explore our showroom for the full collection.' },
+                        { icon: <Building2 size={32} color="#089F9D" />, title: 'Kajaria', desc: 'India\'s No.1 tile brand with world-class quality.' },
+                        { icon: <Factory size={32} color="#089F9D" />, title: 'Somany', desc: 'Premium tiles known for durability and design.' },
+                        { icon: <Sparkles size={32} color="#089F9D" />, title: 'Johnson', desc: 'Innovative tiles with cutting-edge technology.' },
+                        { icon: <Star size={32} color="#089F9D" />, title: 'Nitco', desc: 'Italian-inspired designs with Indian craftsmanship.' },
+                        { icon: <Gem size={32} color="#089F9D" />, title: 'RAK Ceramics', desc: 'Global brand known for premium quality.' },
+                        { icon: <ShieldCheck size={32} color="#089F9D" />, title: 'Asian Granito', desc: 'Wide range of tiles and marble products.' },
+                        { icon: <Star size={32} color="#089F9D" />, title: 'Simpolo', desc: 'Designer tiles for modern interiors.' },
+                        { icon: <Palette size={32} color="#089F9D" />, title: '& Many More', desc: 'Explore our showroom for the full collection.' },
                     ].map((brand, i) => (
                         <AnimateOnScroll key={i} delay={(i % 4) * 0.1}>
                             <div className="value-card">
@@ -162,7 +181,7 @@ export default function Services() {
                         </p>
                         <div className="cta-buttons">
                             <a href="tel:+917877702774" className="btn btn-primary">
-                                📞 Call: +91 7877702774
+                                <Phone size={18} style={{ marginRight: '8px' }} /> Call Now: +91 7877702774
                             </a>
                             <a
                                 href="https://wa.me/917877702774?text=Hello%2C%20I%20need%20help%20choosing%20tiles%20for%20my%20project."
@@ -170,10 +189,10 @@ export default function Services() {
                                 rel="noopener noreferrer"
                                 className="btn btn-whatsapp"
                             >
-                                💬 WhatsApp Us
+                                <MessageCircle size={18} style={{ marginRight: '8px' }} /> WhatsApp Us
                             </a>
                             <Link to="/contact" className="btn btn-secondary">
-                                📍 Visit Showroom
+                                <MapPin size={18} style={{ marginRight: '8px' }} /> Visit Showroom
                             </Link>
                         </div>
                     </div>

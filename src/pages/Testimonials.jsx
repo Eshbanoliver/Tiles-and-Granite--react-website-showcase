@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Star, MapPin, Phone } from 'lucide-react';
+import { Star, MapPin, Phone, Quote } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
 export default function Testimonials() {
@@ -127,29 +127,46 @@ export default function Testimonials() {
                 </div>
 
                 <div className="testimonials-full-grid">
-                    {testimonials.map((t, i) => (
-                        <AnimateOnScroll key={i} delay={(i % 3) * 0.15}>
-                            <div className="testimonial-card">
-                                <div className="testimonial-quote-icon">"</div>
-                                <div className="testimonial-stars">
-                                    {[...Array(t.stars)].map((_, j) => (
-                                        <Star key={j} size={16} fill="#FFD700" color="#FFD700" />
-                                    ))}
-                                    {[...Array(5 - t.stars)].map((_, j) => (
-                                        <Star key={j} size={16} color="#DDD" />
-                                    ))}
-                                </div>
-                                <p className="testimonial-text">{t.text}</p>
-                                <div className="testimonial-author">
-                                    <div className="testimonial-avatar">{t.initials}</div>
-                                    <div className="testimonial-author-info">
-                                        <h4>{t.name}</h4>
-                                        <p>{t.role}</p>
+                    {testimonials.map((t, i) => {
+                        const colors = ['teal', 'purple', 'indigo'];
+                        const color = colors[i % colors.length];
+                        return (
+                            <AnimateOnScroll key={i} delay={(i % 3) * 0.15}>
+                                <div className={`testimonial-card ${color}-test`}>
+                                    <div className="test-header">
+                                        <div className="test-accent-box">
+                                            <div className="test-avatar-ring">
+                                                <span>{t.initials}</span>
+                                            </div>
+                                            <div className="test-accent-corner"></div>
+                                        </div>
+                                        <div className="test-author-info">
+                                            <h4>{t.name}</h4>
+                                            <p>{t.role}</p>
+                                        </div>
+                                        <div className="test-quote-icon">
+                                            <Quote size={32} />
+                                        </div>
+                                    </div>
+                                    <div className="test-divider"></div>
+                                    <div className="test-content">
+                                        <p>{t.text}</p>
+                                    </div>
+                                    <div className="test-footer">
+                                        <div className="testimonial-stars" style={{ justifyContent: 'flex-start' }}>
+                                            {[...Array(t.stars)].map((_, j) => (
+                                                <Star key={j} size={16} fill="#f97316" color="#f97316" />
+                                            ))}
+                                            {[...Array(5 - t.stars)].map((_, j) => (
+                                                <Star key={j} size={16} color="#DDD" />
+                                            ))}
+                                        </div>
+                                        <div className="test-dot-accent"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </AnimateOnScroll>
-                    ))}
+                            </AnimateOnScroll>
+                        );
+                    })}
                 </div>
             </section>
 

@@ -20,7 +20,8 @@ import {
     Gem,
     Handshake,
     Compass,
-    Tag
+    Tag,
+    Quote
 } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
@@ -121,18 +122,21 @@ export default function Home() {
             role: 'Home Owner',
             text: 'Excellent quality tiles at competitive prices. The showroom has a vast collection and the staff was very helpful in selecting the right tiles for my new home.',
             initials: 'RS',
+            color: 'teal'
         },
         {
             name: 'Priya Gupta',
             role: 'Interior Designer',
             text: 'As an interior designer, I need reliable suppliers. Neelmani Tiles never disappoints — their granite collection is outstanding and delivery is always on time.',
             initials: 'PG',
+            color: 'purple'
         },
         {
             name: 'Vikram Singh',
             role: 'Builder & Contractor',
             text: 'Been working with Neelmani Tiles for multiple projects. Their pricing is fair, quality is premium, and they always have the latest designs in stock.',
             initials: 'VS',
+            color: 'indigo'
         },
     ];
 
@@ -472,20 +476,33 @@ export default function Home() {
                 <div className="testimonials-grid">
                     {testimonials.map((t, i) => (
                         <AnimateOnScroll key={i} delay={i * 0.15}>
-                            <div className="testimonial-card">
-                                <div className="testimonial-quote-icon">"</div>
-                                <div className="testimonial-stars">
-                                    {[...Array(5)].map((_, j) => (
-                                        <Star key={j} size={14} fill="#FFD700" color="#FFD700" />
-                                    ))}
-                                </div>
-                                <p className="testimonial-text">{t.text}</p>
-                                <div className="testimonial-author">
-                                    <div className="testimonial-avatar">{t.initials}</div>
-                                    <div className="testimonial-author-info">
+                            <div className={`testimonial-card ${t.color}-test`}>
+                                <div className="test-header">
+                                    <div className="test-accent-box">
+                                        <div className="test-avatar-ring">
+                                            <span>{t.initials}</span>
+                                        </div>
+                                        <div className="test-accent-corner"></div>
+                                    </div>
+                                    <div className="test-author-info">
                                         <h4>{t.name}</h4>
                                         <p>{t.role}</p>
                                     </div>
+                                    <div className="test-quote-icon">
+                                        <Quote size={40} />
+                                    </div>
+                                </div>
+                                <div className="test-divider"></div>
+                                <div className="test-content">
+                                    <p>{t.text}</p>
+                                </div>
+                                <div className="test-footer">
+                                    <div className="testimonial-stars">
+                                        {[...Array(5)].map((_, j) => (
+                                            <Star key={j} size={16} fill="#f97316" color="#f97316" />
+                                        ))}
+                                    </div>
+                                    <div className="test-dot-accent"></div>
                                 </div>
                             </div>
                         </AnimateOnScroll>
@@ -493,7 +510,7 @@ export default function Home() {
                 </div>
                 <AnimateOnScroll>
                     <div className="text-center" style={{ marginTop: '40px' }}>
-                        <Link to="/testimonials" className="btn btn-secondary">
+                        <Link to="/testimonials" className="btn btn-primary">
                             Read All Testimonials <ChevronRight size={18} style={{ marginLeft: '4px' }} />
                         </Link>
                     </div>

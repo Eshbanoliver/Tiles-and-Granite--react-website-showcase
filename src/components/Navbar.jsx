@@ -74,7 +74,7 @@ export default function Navbar() {
                         {item.label}
                     </Link>
                 ))}
-                <Link to="/contact" className="btn btn-primary" style={{ marginTop: '16px' }}>
+                <Link to="/contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '8px' }}>
                     Get a Quote
                 </Link>
             </div>

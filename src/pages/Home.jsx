@@ -144,12 +144,14 @@ export default function Home() {
     ];
 
     const whyChooseUs = [
-        { title: 'Extensive Collection', desc: 'Thousands of tiles and granite options across all styles, colors, and budgets under one roof.' },
-        { title: 'Premium Brands', desc: 'We stock products from India\'s and the world\'s most trusted tile and granite manufacturers.' },
-        { title: 'Expert Consultation', desc: 'Our experienced team helps you find the perfect match for your space and budget.' },
-        { title: 'Competitive Pricing', desc: 'Direct sourcing from manufacturers ensures the best prices for our customers.' },
-        { title: 'Trusted Since Years', desc: 'A proven track record of delivering excellence, earning trust of thousands of happy customers.' },
-        { title: 'One-Stop Solution', desc: 'From floor tiles to kitchen countertops — all types of tiles and granite available here.' },
+        { title: 'Extensive Collection', desc: 'Thousands of tiles and granite options across all styles, colors, and budgets under one roof.', color: 'ocean' },
+        { title: 'Premium Brands', desc: 'We stock products from India\'s and the world\'s most trusted tile and granite manufacturers.', color: 'sunset' },
+        { title: 'Expert Consultation', desc: 'Our experienced team helps you find the perfect match for your space and budget.', color: 'mint' },
+        { title: 'Competitive Pricing', desc: 'Direct sourcing from manufacturers ensures the best prices for our customers.', color: 'berry' },
+        { title: 'Trusted Since Years', desc: 'A proven track record of delivering excellence, earning trust of thousands of happy customers.', color: 'lavender' },
+        { title: 'One-Stop Solution', desc: 'From floor tiles to kitchen countertops — all types of tiles and granite available here.', color: 'sky' },
+        { title: 'Quality Assurance', desc: 'Rigorous quality checks for every single piece of tile and granite to ensure long-lasting beauty.', color: 'gold' },
+        { title: 'Timely Delivery', desc: 'Efficient logistics network ensuring your materials arrive on schedule for your project.', color: 'rose' },
     ];
 
     return (
@@ -414,7 +416,7 @@ export default function Home() {
                 <div className="why-grid">
                     {whyChooseUs.map((item, i) => (
                         <AnimateOnScroll key={i} delay={i * 0.1}>
-                            <div className="why-card">
+                            <div className={`why-card ${item.color}-why`}>
                                 <span className="why-number">0{i + 1}</span>
                                 <h3>{item.title}</h3>
                                 <p>{item.desc}</p>

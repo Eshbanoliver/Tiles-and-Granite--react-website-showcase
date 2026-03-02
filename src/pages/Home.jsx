@@ -240,6 +240,10 @@ export default function Home() {
 
             {/* ===== ABOUT PREVIEW ===== */}
             <section className="about-preview" id="about-preview-section">
+                {/* Decorative background circles */}
+                <div className="circle-decoration"></div>
+                <div className="circle-decoration-2"></div>
+
                 <div className="about-preview-grid">
                     <AnimateOnScroll>
                         <div className="about-preview-image">
@@ -262,7 +266,7 @@ export default function Home() {
                                 products, expert guidance, and competitive pricing.
                             </p>
                             <Link to="/about" className="btn btn-primary">
-                                Learn More About Us <ChevronRight size={18} style={{ marginLeft: '4px' }} />
+                                Discover More <ChevronRight size={18} style={{ marginLeft: '4px' }} />
                             </Link>
                         </div>
                     </AnimateOnScroll>

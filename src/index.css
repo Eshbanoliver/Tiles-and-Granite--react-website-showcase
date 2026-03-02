@@ -452,17 +452,41 @@ h6 {
 .hero {
   position: relative;
   min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg-main);
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
   display: flex;
   align-items: center;
   padding: 120px 5% 80px;
-  overflow: hidden;
+  z-index: 1;
 }
 
-.hero::before {
-  content: '';
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(248, 245, 252, 0.92) 0%, rgba(240, 236, 245, 0.75) 50%, rgba(248, 245, 252, 0.88) 100%);
+  background: linear-gradient(135deg, rgba(248, 245, 252, 0.4) 0%, rgba(240, 236, 245, 0.2) 50%, rgba(248, 245, 252, 0.5) 100%);
   z-index: 1;
 }
 
@@ -476,6 +500,12 @@ h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 10s linear;
+}
+
+.hero-slide.active .hero-bg img {
+  transform: scale(1);
 }
 
 .hero-content {
@@ -560,42 +590,154 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1000px;
 }
 
-.hero-image-container {
-  position: relative;
+.hero-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   width: 100%;
   max-width: 500px;
-  aspect-ratio: 4/5;
-  border-radius: var(--radius-xl);
+}
+
+.liquid-glass-card {
+  position: relative;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-heading);
   overflow: hidden;
-  border: 2px solid rgba(132, 116, 161, 0.2);
-  box-shadow: 0 30px 60px rgba(132, 116, 161, 0.2);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-smooth);
 }
 
-.hero-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-image-container::after {
+.liquid-glass-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(248, 245, 252, 0.4) 0%, transparent 40%);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
+  transform: rotate(45deg);
+  transition: 0.6s;
 }
 
-.hero-floating-card {
+.liquid-glass-card:hover {
+  transform: translateY(-8px) rotateX(5deg) rotateY(-5deg);
+  border-color: var(--teal-light);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(8, 159, 157, 0.15);
+}
+
+.liquid-glass-card:hover::before {
+  left: 100%;
+}
+
+.metric-icon-small {
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 159, 157, 0.1);
+  border-radius: 12px;
+}
+
+.metric-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-num-small {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--teal);
+  line-height: 1.2;
+}
+
+.metric-label-small {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Slider Dots */
+.slider-dots {
   position: absolute;
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  padding: 16px 20px;
-  box-shadow: var(--glass-shadow);
-  animation: float 6s ease-in-out infinite;
+  bottom: 40px;
+  left: 5%;
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+}
+
+.slider-dot {
+  width: 40px;
+  height: 4px;
+  background: rgba(132, 116, 161, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border-radius: 2px;
+}
+
+.slider-dot.active {
+  background: var(--teal);
+  width: 60px;
+}
+
+/* Animations for active slide content */
+.hero-slide.active .hero-text>* {
+  animation: slideUpFade 0.8s ease forwards;
+}
+
+.hero-slide.active .hero-title {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.hero-slide.active .hero-badge {
+  animation-delay: 0s;
+  opacity: 0;
+}
+
+.hero-slide.active .hero-subtitle {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero-slide.active .hero-buttons {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-floating-card.card-1 {
@@ -1826,7 +1968,33 @@ h6 {
   }
 
   .hero-visual {
-    display: none;
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .hero-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  .hero-slider,
+  .hero-slide {
+    height: 90vh;
+  }
+
+  .hero-slide {
+    padding: 140px 5% 80px;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-slider {
+    height: auto;
+    min-height: 100vh;
   }
 
   .about-preview-grid,
@@ -1868,12 +2036,26 @@ h6 {
   }
 
   .hero {
-    padding: 120px 5% 60px;
-    min-height: auto;
+    padding: 0;
+    min-height: 80vh;
+  }
+
+  .hero-slider,
+  .hero-slide {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(to bottom,
+        rgba(248, 245, 252, 0.95) 0%,
+        rgba(248, 245, 252, 0.7) 40%,
+        rgba(248, 245, 252, 0.85) 100%);
   }
 
   .hero-title {
-    font-size: 36px;
+    font-size: 32px;
+    margin-top: 10px;
   }
 
   .hero-badge {
@@ -1943,6 +2125,21 @@ h6 {
     width: 42px;
     height: 42px;
   }
+
+  .slider-dots {
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 8px;
+  }
+
+  .slider-dot {
+    width: 20px;
+  }
+
+  .slider-dot.active {
+    width: 35px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1966,5 +2163,14 @@ h6 {
 
   .section-title {
     font-size: 28px;
+  }
+
+  .hero-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .liquid-glass-card {
+    padding: 16px;
   }
 }

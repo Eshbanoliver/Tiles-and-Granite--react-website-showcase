@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
@@ -8,6 +8,42 @@ export default function Home() {
     const toggleFaq = (index) => {
         setOpenFaq(openFaq === index ? null : index);
     };
+
+    const heroSlides = [
+        {
+            image: '/images/hero-3.jpg',
+            badge: "Jaipur's Premium Showroom",
+            title: 'Transform Your Space with Premium Tiles & Granite',
+            subtitle: 'Discover an exquisite collection of tiles, marble, and granite at Neelmani Tiles and Granite. Elevate your home, office, or commercial space with elegance and durability.',
+            primaryBtn: 'Explore Collection →',
+            secondaryBtn: 'Visit Showroom'
+        },
+        {
+            image: '/images/hero-1.jpg',
+            badge: 'Modern Collection 2024',
+            title: 'Exquisite Designs for Modern Living',
+            subtitle: 'Looking for the perfect tiles for your dream home? Our vast collection of designer tiles and premium granite offers endless possibilities for your space.',
+            primaryBtn: 'View Products →',
+            secondaryBtn: 'Contact Us'
+        },
+        {
+            image: '/images/hero-2.jpg',
+            badge: 'Quality & Trust',
+            title: 'Durability Meets Elegant Aesthetics',
+            subtitle: 'From sturdy floor tiles to luxurious kitchen countertops, we provide high-quality materials that stand the test of time while keeping your space beautiful.',
+            primaryBtn: 'Book Consultation →',
+            secondaryBtn: 'Our Services'
+        }
+    ];
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, [heroSlides.length]);
 
     const faqs = [
         {
@@ -98,43 +134,70 @@ export default function Home() {
         <>
             {/* ===== HERO SECTION ===== */}
             <section className="hero" id="hero-section">
-                <div className="hero-bg">
-                    <img src="/images/hero-showroom.png" alt="Premium tiles showroom" />
-                </div>
-                <div className="hero-content">
-                    <div className="hero-text">
-                        <div className="hero-badge">
-                            <span></span> Jaipur's Premium Showroom
+                <div className="hero-slider">
+                    {heroSlides.map((slide, index) => (
+                        <div
+                            key={index}
+                            className={`hero-slide ${currentSlide === index ? 'active' : ''}`}
+                        >
+                            <div className="hero-bg">
+                                <img src={slide.image} alt={slide.title} />
+                                <div className="hero-overlay"></div>
+                            </div>
+                            <div className="hero-content">
+                                <div className="hero-text">
+                                    <div className="hero-badge">
+                                        <span></span> {slide.badge}
+                                    </div>
+                                    <h1 className="hero-title">
+                                        {slide.title.split(' ').map((word, i) =>
+                                            word === 'Premium' || word === 'Tiles' || word === '&' || word === 'Granite' || word === 'Modern' || word === 'Designs' || word === 'Elegant' ?
+                                                <span key={i} className="gradient-text">{word} </span> : word + ' '
+                                        )}
+                                    </h1>
+                                    <p className="hero-subtitle">
+                                        {slide.subtitle}
+                                    </p>
+                                    <div className="hero-buttons">
+                                        <Link to="/services" className="btn btn-primary">
+                                            {slide.primaryBtn}
+                                        </Link>
+                                        <Link to="/contact" className="btn btn-secondary">
+                                            {slide.secondaryBtn}
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div className="hero-visual">
+                                    <div className="hero-metrics-grid">
+                                        {[
+                                            { num: '10+', label: 'Years Experience', icon: '🏆' },
+                                            { num: '500+', label: 'Happy Clients', icon: '😊' },
+                                            { num: '1000+', label: 'Projects Done', icon: '🏠' },
+                                            { num: '5000+', label: 'Designs', icon: '🎨' }
+                                        ].map((m, i) => (
+                                            <div key={i} className={`liquid-glass-card metric-${i + 1}`}>
+                                                <div className="metric-icon-small">{m.icon}</div>
+                                                <div className="metric-info">
+                                                    <div className="metric-num-small">{m.num}</div>
+                                                    <div className="metric-label-small">{m.label}</div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h1 className="hero-title">
-                            Transform Your Space with{' '}
-                            <span className="gradient-text">Premium Tiles & Granite</span>
-                        </h1>
-                        <p className="hero-subtitle">
-                            Discover an exquisite collection of tiles, marble, and granite at Neelmani Tiles and Granite.
-                            Elevate your home, office, or commercial space with elegance and durability.
-                        </p>
-                        <div className="hero-buttons">
-                            <Link to="/services" className="btn btn-primary">
-                                Explore Collection →
-                            </Link>
-                            <Link to="/contact" className="btn btn-secondary">
-                                Visit Showroom
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="hero-visual">
-                        <div className="hero-image-container">
-                            <img src="/images/marble-texture.png" alt="Premium marble texture" />
-                        </div>
-                        <div className="hero-floating-card card-1">
-                            <div className="floating-card-stat">500+</div>
-                            <div className="floating-card-label">Happy Clients</div>
-                        </div>
-                        <div className="hero-floating-card card-2">
-                            <div className="floating-card-stat">10+</div>
-                            <div className="floating-card-label">Years Experience</div>
-                        </div>
+                    ))}
+
+                    <div className="slider-dots">
+                        {heroSlides.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`slider-dot ${currentSlide === index ? 'active' : ''}`}
+                                onClick={() => setCurrentSlide(index)}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>

@@ -14,7 +14,9 @@ import {
     ShieldCheck,
     Award,
     Headset,
-    Truck
+    Truck,
+    Target,
+    Eye
 } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
@@ -305,7 +307,7 @@ export default function Home() {
                 </div>
                 <AnimateOnScroll>
                     <div className="text-center" style={{ marginTop: '40px' }}>
-                        <Link to="/services" className="btn btn-secondary">
+                        <Link to="/services" className="btn btn-primary">
                             View All Services →
                         </Link>
                     </div>
@@ -324,27 +326,47 @@ export default function Home() {
                 </div>
                 <div className="mv-grid">
                     <AnimateOnScroll>
-                        <div className="mv-card">
-                            <div className="mv-card-icon">🎯</div>
-                            <h3>Our Mission</h3>
-                            <p>
-                                To be Jaipur's most trusted tiles and granite provider by offering an unmatched
-                                selection of premium quality products at competitive prices. We aim to simplify the
-                                process of transforming spaces, providing expert guidance and personalized service
-                                that exceeds customer expectations.
-                            </p>
+                        <div className="mv-card-container teal-theme">
+                            <div className="mv-card">
+                                {/* Front Face */}
+                                <div className="mv-card-front">
+                                    <h3 className="flip-title">Our Mission</h3>
+                                    <span className="flip-subtitle">Hover Me</span>
+                                </div>
+                                {/* Back Face */}
+                                <div className="mv-card-back">
+                                    <div className="mv-card-icon"><Target size={32} /></div>
+                                    <h3>Our Mission</h3>
+                                    <p>
+                                        To be Jaipur's most trusted tiles and granite provider by offering an unmatched
+                                        selection of premium quality products at competitive prices. We aim to simplify the
+                                        process of transforming spaces, providing expert guidance and personalized service
+                                        that exceeds customer expectations.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </AnimateOnScroll>
                     <AnimateOnScroll delay={0.15}>
-                        <div className="mv-card">
-                            <div className="mv-card-icon">🔭</div>
-                            <h3>Our Vision</h3>
-                            <p>
-                                To become the leading tiles and granite showroom in Rajasthan, recognized for our
-                                vast collection, exceptional customer service, and commitment to quality. We envision
-                                helping thousands of families and businesses create spaces that inspire and endure for
-                                generations.
-                            </p>
+                        <div className="mv-card-container purple-theme">
+                            <div className="mv-card">
+                                {/* Front Face */}
+                                <div className="mv-card-front">
+                                    <h3 className="flip-title">Our Vision</h3>
+                                    <span className="flip-subtitle">Hover Me</span>
+                                </div>
+                                {/* Back Face */}
+                                <div className="mv-card-back">
+                                    <div className="mv-card-icon"><Eye size={32} /></div>
+                                    <h3>Our Vision</h3>
+                                    <p>
+                                        To become the leading tiles and granite showroom in Rajasthan, recognized for our
+                                        vast collection, exceptional customer service, and commitment to quality. We envision
+                                        helping thousands of families and businesses create spaces that inspire and endure for
+                                        generations.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </AnimateOnScroll>
                 </div>

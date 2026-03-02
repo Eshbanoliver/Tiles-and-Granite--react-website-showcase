@@ -1297,45 +1297,151 @@ h6 {
 }
 
 .value-card {
-  padding: 36px 28px;
-  text-align: center;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  text-align: left;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
   transition: all var(--transition-smooth);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  z-index: 1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  /* Added default shadow */
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  bottom: -60px;
+  right: -60px;
+  z-index: -1;
+}
+
+.value-card::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  bottom: 20px;
+  right: 40px;
+  z-index: -1;
+}
+
+/* Color Variants */
+.blue-card {
+  background-color: #e0f2fe;
+}
+
+.blue-card h3 {
+  color: #881337;
+}
+
+.green-card {
+  background-color: #dcfce7;
+}
+
+.green-card h3 {
+  color: #14532d;
+}
+
+.orange-card {
+  background-color: #ffedd5;
+}
+
+.orange-card h3 {
+  color: #7c2d12;
+}
+
+.purple-card {
+  background-color: #f5f3ff;
+}
+
+.purple-card h3 {
+  color: #5b21b6;
 }
 
 .value-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(8, 159, 157, 0.3);
-  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .value-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 16px;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(204, 171, 216, 0.2), rgba(110, 198, 202, 0.2));
-  border-radius: 50%;
-  font-size: 28px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 14px;
+  color: #1e293b;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* Ensure lucide icons are sized correctly */
+.value-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.blue-card .value-icon {
+  color: #0369a1;
+}
+
+.green-card .value-icon {
+  color: #15803d;
+}
+
+.orange-card .value-icon {
+  color: #c2410c;
+}
+
+.purple-card .value-icon {
+  color: #6d28d9;
 }
 
 .value-card h3 {
-  font-family: var(--font-accent);
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: var(--text-heading);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
 }
 
 .value-card p {
-  color: var(--text-muted);
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.value-btn {
+  background: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-weight: 700;
   font-size: 14px;
-  line-height: 1.7;
+  color: #1e293b;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.value-btn:hover {
+  background: #f8fafc;
+  transform: scale(1.05);
 }
 
 /* ===== WHY CHOOSE US ===== */
@@ -2409,7 +2515,8 @@ h6 {
   }
 
   .value-card {
-    padding: 28px 20px;
+    padding: 32px 24px;
+    text-align: left;
   }
 
   .service-card-body {

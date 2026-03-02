@@ -16,7 +16,11 @@ import {
     Headset,
     Truck,
     Target,
-    Eye
+    Eye,
+    Gem,
+    Handshake,
+    Compass,
+    Tag
 } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
@@ -133,10 +137,10 @@ export default function Home() {
     ];
 
     const coreValues = [
-        { icon: '💎', title: 'Premium Quality', desc: 'Only the finest tiles and granite from trusted manufacturers.' },
-        { icon: '🤝', title: 'Customer First', desc: 'Your satisfaction is our top priority in every interaction.' },
-        { icon: '🎯', title: 'Expert Guidance', desc: 'Professional advice to help you choose the perfect products.' },
-        { icon: '💰', title: 'Best Value', desc: 'Competitive pricing without compromising on quality.' },
+        { icon: <Gem size={28} />, title: 'Premium Quality', desc: 'Only the finest tiles and granite from trusted manufacturers.', color: 'blue' },
+        { icon: <Handshake size={28} />, title: 'Customer First', desc: 'Your satisfaction is our top priority in every interaction.', color: 'green' },
+        { icon: <Compass size={28} />, title: 'Expert Guidance', desc: 'Professional advice to help you choose the perfect products.', color: 'orange' },
+        { icon: <Tag size={28} />, title: 'Best Value', desc: 'Competitive pricing without compromising on quality.', color: 'purple' },
     ];
 
     const whyChooseUs = [
@@ -331,7 +335,6 @@ export default function Home() {
                                 {/* Front Face */}
                                 <div className="mv-card-front">
                                     <h3 className="flip-title">Our Mission</h3>
-                                    <span className="flip-subtitle">Hover Me</span>
                                 </div>
                                 {/* Back Face */}
                                 <div className="mv-card-back">
@@ -353,7 +356,6 @@ export default function Home() {
                                 {/* Front Face */}
                                 <div className="mv-card-front">
                                     <h3 className="flip-title">Our Vision</h3>
-                                    <span className="flip-subtitle">Hover Me</span>
                                 </div>
                                 {/* Back Face */}
                                 <div className="mv-card-back">
@@ -385,10 +387,11 @@ export default function Home() {
                 <div className="values-grid">
                     {coreValues.map((val, i) => (
                         <AnimateOnScroll key={i} delay={i * 0.1}>
-                            <div className="value-card">
+                            <div className={`value-card ${val.color}-card`}>
                                 <div className="value-icon">{val.icon}</div>
                                 <h3>{val.title}</h3>
                                 <p>{val.desc}</p>
+                                <Link to="/about" className="value-btn">See more</Link>
                             </div>
                         </AnimateOnScroll>
                     ))}

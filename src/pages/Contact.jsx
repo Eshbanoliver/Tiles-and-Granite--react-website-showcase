@@ -25,18 +25,20 @@ export default function Contact() {
     return (
         <>
             {/* Page Header */}
-            <section className="page-header">
-                <div className="page-header-breadcrumb">
-                    <Link to="/">Home</Link>
-                    <span>/</span>
-                    <span>Contact Us</span>
+            <section className="page-header" style={{ backgroundImage: 'url("/contact-hero-new.png")' }}>
+                <div className="page-header-container">
+                    <div className="page-header-breadcrumb">
+                        <Link to="/">Home</Link>
+                        <span>/</span>
+                        <span>Contact Us</span>
+                    </div>
+                    <h1>
+                        Contact <span className="gradient-text">Us</span>
+                    </h1>
+                    <p>
+                        Get in touch with us. Visit our showroom or reach out via phone, WhatsApp, or the form below.
+                    </p>
                 </div>
-                <h1>
-                    Contact <span className="gradient-text">Us</span>
-                </h1>
-                <p>
-                    Get in touch with us. Visit our showroom or reach out via phone, WhatsApp, or the form below.
-                </p>
             </section>
 
             {/* Contact Info + Form */}

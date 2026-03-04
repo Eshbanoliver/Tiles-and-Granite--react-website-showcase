@@ -76,18 +76,20 @@ export default function Services() {
     return (
         <>
             {/* Page Header */}
-            <section className="page-header">
-                <div className="page-header-breadcrumb">
-                    <Link to="/">Home</Link>
-                    <span>/</span>
-                    <span>Services</span>
+            <section className="page-header" style={{ backgroundImage: 'url("/services-hero.png")' }}>
+                <div className="page-header-container">
+                    <div className="page-header-breadcrumb">
+                        <Link to="/">Home</Link>
+                        <span>/</span>
+                        <span>Services</span>
+                    </div>
+                    <h1>
+                        Our <span className="gradient-text">Premium Collections</span>
+                    </h1>
+                    <p>
+                        Neelmani Tiles and Granite is a trusted name in Jaipur for premium tiles, granite, marble, and stone solutions.
+                    </p>
                 </div>
-                <h1>
-                    Our <span className="gradient-text">Premium Collections</span>
-                </h1>
-                <p>
-                    Neelmani Tiles and Granite is a trusted name in Jaipur for premium tiles, granite, marble, and stone solutions.
-                </p>
             </section>
 
             {/* Services Detailed Intro */}

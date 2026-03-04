@@ -72,18 +72,20 @@ export default function Testimonials() {
     return (
         <>
             {/* Page Header */}
-            <section className="page-header">
-                <div className="page-header-breadcrumb">
-                    <Link to="/">Home</Link>
-                    <span>/</span>
-                    <span>Testimonials</span>
+            <section className="page-header" style={{ backgroundImage: 'url("/testimonials-hero.png")' }}>
+                <div className="page-header-container">
+                    <div className="page-header-breadcrumb">
+                        <Link to="/">Home</Link>
+                        <span>/</span>
+                        <span>Testimonials</span>
+                    </div>
+                    <h1>
+                        Customer <span className="gradient-text">Testimonials</span>
+                    </h1>
+                    <p>
+                        Read what our valued customers have to say about their experience with Neelmani Tiles and Granite.
+                    </p>
                 </div>
-                <h1>
-                    Customer <span className="gradient-text">Testimonials</span>
-                </h1>
-                <p>
-                    Read what our valued customers have to say about their experience with Neelmani Tiles and Granite.
-                </p>
             </section>
 
             {/* Overall Rating */}

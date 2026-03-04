@@ -51,42 +51,46 @@ export default function About() {
             <section className="about-full">
                 <div className="about-content-grid">
                     <AnimateOnScroll>
-                        <div className="about-image-wrapper">
-                            <img src="/images/about-team.png" alt="Neelmani Tiles Showroom" />
+                        <div className="about-creative-visual">
+                            <div className="about-image-wrapper creative-shape">
+                                <img src="/images/about-team.png" alt="Neelmani Tiles Showroom" />
+                                <div className="experience-badge">
+                                    <span className="exp-number">10+</span>
+                                    <span className="exp-text">Years of<br />Excellence</span>
+                                </div>
+                            </div>
+                            <div className="about-decoration-dots"></div>
                         </div>
                     </AnimateOnScroll>
                     <AnimateOnScroll delay={0.2}>
-                        <div className="about-text">
+                        <div className="about-text creative-text">
                             <span className="section-label">Our Story</span>
                             <h2>
                                 Building Dreams with <span className="gradient-text">Stone & Style</span>
                             </h2>
-                            <p>
+                            <p className="lead">
                                 Neelmani Tiles and Granite was founded with a simple yet powerful vision — to make
-                                premium quality tiles and granite accessible to everyone in Jaipur and beyond. What
-                                started as a small venture has grown into one of the most trusted names in the tiles
-                                and granite industry.
+                                premium quality tiles and granite accessible to everyone in Jaipur and beyond.
                             </p>
                             <p>
-                                Our showroom, located at Mansarover, Jaipur, houses an extensive collection of
-                                tiles, marble, and granite from both Indian and international manufacturers. From
-                                classic marble patterns to contemporary designer tiles, we offer solutions for
-                                every taste and budget.
+                                What started as a small venture has grown into one of the most trusted names in the industry.
+                                Our showroom at Mansarover, Jaipur, houses an extensive collection of
+                                tiles, marble, and granite from Indian and international manufacturers.
                             </p>
-                            <p>
-                                At Neelmani Tiles, we believe that every space tells a story. Our team of experienced
-                                professionals works closely with you to understand your vision and recommend the
-                                perfect products to bring it to life.
-                            </p>
-                            <div className="about-highlights">
+
+                            <div className="about-highlights-grid">
                                 {highlights.map((h, i) => (
-                                    <div key={i} className="about-highlight-item">
-                                        <span className="about-highlight-icon">
-                                            <Check size={18} />
-                                        </span>
+                                    <div key={i} className="highlight-pill">
+                                        <Check size={14} className="pill-icon" />
                                         <span>{h}</span>
                                     </div>
                                 ))}
+                            </div>
+
+                            <div className="about-cta-wrapper" style={{ marginTop: '40px' }}>
+                                <Link to="/services" className="btn btn-primary discover-btn">
+                                    Discover More <span className="arrow">→</span>
+                                </Link>
                             </div>
                         </div>
                     </AnimateOnScroll>

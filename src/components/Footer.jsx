@@ -6,9 +6,17 @@ export default function Footer() {
         <footer className="footer" id="site-footer">
             <div className="footer-grid">
                 <div className="footer-brand">
-                    <h3>
-                        Neelmani <span className="gradient-text">Tiles & Granite</span>
-                    </h3>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+                        <img
+                            src="/images/logo.png"
+                            alt="Neelmani Tiles Logo"
+                            className="site-logo"
+                            style={{ height: '50px', width: 'auto' }}
+                        />
+                        <h3 style={{ marginBottom: 0 }}>
+                            Neelmani <span className="gradient-text">Tiles & Granite</span>
+                        </h3>
+                    </div>
                     <p>
                         Your trusted destination for premium quality tiles, marble, and granite in Jaipur.
                         Transforming spaces with elegance and excellence since years.

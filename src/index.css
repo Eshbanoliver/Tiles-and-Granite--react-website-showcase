@@ -2461,6 +2461,145 @@ h6 {
   transform: translateX(8px);
 }
 
+/* Services Promise Section */
+.services-promise {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.promise-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.promise-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(132, 116, 161, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.promise-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(8, 159, 157, 0.1);
+  border-color: var(--teal-light);
+}
+
+.promise-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(8, 159, 157, 0.05);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.promise-card:hover .promise-icon-wrapper {
+  background: var(--teal);
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.promise-card h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-heading);
+}
+
+.promise-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced Gradient Circles for Promise Cards */
+.promise-card-gradient {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  bottom: -80px;
+  right: -80px;
+  filter: blur(50px);
+  opacity: 0.15;
+  /* Increased opacity for visibility */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.promise-card:hover .promise-card-gradient {
+  opacity: 0.35;
+  /* Stronger glow on hover */
+  transform: scale(1.3) translate(-20px, -20px);
+}
+
+.teal-promise .promise-card-gradient {
+  background: var(--teal);
+}
+
+.teal-promise .promise-icon-wrapper {
+  color: var(--teal);
+  background: rgba(8, 159, 157, 0.05);
+}
+
+.orange-promise .promise-card-gradient {
+  background: var(--orange);
+}
+
+.orange-promise .promise-icon-wrapper {
+  color: var(--orange);
+  background: rgba(243, 146, 0, 0.05);
+}
+
+.purple-promise .promise-card-gradient {
+  background: var(--purple);
+}
+
+.purple-promise .promise-icon-wrapper {
+  color: var(--purple);
+  background: rgba(132, 116, 161, 0.05);
+}
+
+.green-promise .promise-card-gradient {
+  background: #10b981;
+}
+
+.green-promise .promise-icon-wrapper {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+@media (max-width: 968px) {
+  .promise-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 /* Responsive Overrides */
 @media (max-width: 1024px) {
   .about-content-grid {

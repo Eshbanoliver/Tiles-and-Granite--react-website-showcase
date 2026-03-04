@@ -16,7 +16,8 @@ import {
     Phone,
     MessageCircle,
     MapPin,
-    ArrowRight
+    ArrowRight,
+    Target
 } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
@@ -157,18 +158,57 @@ export default function Services() {
                 </div>
             </section>
 
-            {/* Values/Trust Banner */}
-            <section className="services-banner" style={{ marginTop: 0 }}>
-                <AnimateOnScroll>
-                    <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-                        <h2 style={{ fontSize: '32px' }}>
-                            <span className="gradient-text">Reliable Service</span> That Transforms Your Space
-                        </h2>
-                        <p style={{ fontSize: '18px', opacity: 0.9 }}>
-                            We provide expert guidance to help you select the best stones and tiles for your dream project, ensuring durability and style go hand-in-hand.
-                        </p>
+            {/* Services Promise Section */}
+            <section className="services-promise">
+                <div className="promise-decor-circle"></div>
+                <div className="promise-container">
+                    <div className="text-center">
+                        <AnimateOnScroll>
+                            <span className="section-label">Our Commitment</span>
+                            <h2 className="section-title">
+                                <span className="gradient-text">Reliable Service</span> That Transforms Your Space
+                            </h2>
+                            <p className="section-subtitle center">
+                                We combine decades of expertise with a passion for design to help you create spaces that last a lifetime.
+                            </p>
+                        </AnimateOnScroll>
                     </div>
-                </AnimateOnScroll>
+
+                    <div className="promise-grid">
+                        <AnimateOnScroll delay={0.1}>
+                            <div className="promise-card teal-promise">
+                                <div className="promise-icon-wrapper">
+                                    <ShieldCheck size={32} />
+                                </div>
+                                <h3>Style & Strength</h3>
+                                <p>Our products are handpicked for their aesthetic appeal and long-lasting durability in any environment.</p>
+                                <div className="promise-card-gradient"></div>
+                            </div>
+                        </AnimateOnScroll>
+
+                        <AnimateOnScroll delay={0.2}>
+                            <div className="promise-card orange-promise">
+                                <div className="promise-icon-wrapper">
+                                    <Target size={32} />
+                                </div>
+                                <h3>Expert Guidance</h3>
+                                <p>Get personalized consultation to help you choose the right materials that fit your vision and budget.</p>
+                                <div className="promise-card-gradient"></div>
+                            </div>
+                        </AnimateOnScroll>
+
+                        <AnimateOnScroll delay={0.3}>
+                            <div className="promise-card green-promise">
+                                <div className="promise-icon-wrapper">
+                                    <Gem size={32} />
+                                </div>
+                                <h3>Premium Quality</h3>
+                                <p>Directly sourced from top manufacturers to ensure you get authentic, high-grade stone and tiles.</p>
+                                <div className="promise-card-gradient"></div>
+                            </div>
+                        </AnimateOnScroll>
+                    </div>
+                </div>
             </section>
 
             {/* Brands Section */}

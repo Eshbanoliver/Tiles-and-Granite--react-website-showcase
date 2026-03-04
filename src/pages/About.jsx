@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Check, Target, Eye, MapPin, Phone } from 'lucide-react';
+import { Check, Target, Eye, MapPin, Phone, Building2, TrendingUp, Award, ArrowRight } from 'lucide-react';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 
 export default function About() {
@@ -17,16 +17,22 @@ export default function About() {
             year: 'Foundation',
             title: 'Humble Beginnings',
             desc: 'Started as a small tiles shop with a vision to provide premium quality tiles and granite at affordable prices to the people of Jaipur.',
+            icon: Building2,
+            theme: 'teal'
         },
         {
             year: 'Growth',
             title: 'Expanding the Collection',
             desc: 'Expanded our product range to include imported marble, granite slabs, designer tiles, and modern flooring solutions.',
+            icon: TrendingUp,
+            theme: 'orange'
         },
         {
             year: 'Present',
             title: 'Premium Showroom',
             desc: 'Today, we are one of Jaipur\'s most trusted tiles and granite showrooms with thousands of satisfied customers and an ever-growing collection.',
+            icon: Award,
+            theme: 'red'
         },
     ];
 
@@ -98,7 +104,7 @@ export default function About() {
             </section>
 
             {/* Journey Section */}
-            <section className="core-values">
+            <section className="core-values journey-section">
                 <div className="text-center">
                     <AnimateOnScroll>
                         <span className="section-label">Our Journey</span>
@@ -107,27 +113,19 @@ export default function About() {
                         </h2>
                     </AnimateOnScroll>
                 </div>
-                <div className="values-grid" style={{ maxWidth: '1000px', margin: '40px auto 0', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+                <div className="values-grid timeline-grid">
                     {timeline.map((t, i) => (
                         <AnimateOnScroll key={i} delay={i * 0.15}>
-                            <div className="value-card" style={{ textAlign: 'left', padding: '36px 28px' }}>
-                                <div style={{
-                                    display: 'inline-block',
-                                    padding: '4px 14px',
-                                    background: 'rgba(8, 159, 157, 0.1)',
-                                    borderRadius: '100px',
-                                    fontSize: '12px',
-                                    fontWeight: '700',
-                                    color: '#089F9D',
-                                    fontFamily: 'var(--font-accent)',
-                                    letterSpacing: '1px',
-                                    textTransform: 'uppercase',
-                                    marginBottom: '16px',
-                                }}>
-                                    {t.year}
+                            <div className={`value-card journey-card ${t.theme}-journey`}>
+                                <div className="journey-card-top">
+                                    <div className="journey-year-pill">{t.year}</div>
+                                    <div className="journey-icon-box">
+                                        <t.icon size={24} />
+                                    </div>
                                 </div>
-                                <h3 style={{ fontSize: '20px', marginBottom: '12px' }}>{t.title}</h3>
-                                <p>{t.desc}</p>
+                                <h3 className="journey-card-title">{t.title}</h3>
+                                <p className="journey-card-desc">{t.desc}</p>
+                                <div className="journey-card-gradient"></div>
                             </div>
                         </AnimateOnScroll>
                     ))}

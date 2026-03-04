@@ -1309,125 +1309,171 @@ h6 {
   margin: 40px auto 0;
 }
 
-.value-card {
-  padding: 40px 30px;
-  text-align: left;
-  border-radius: 24px;
+/* Journey Section / Timeline Grid */
+.timeline-grid {
+  max-width: 1100px;
+  margin: 50px auto 0;
+  gap: 32px;
+}
+
+.journey-card {
+  background: white;
+  border: 1px solid rgba(132, 116, 161, 0.08);
+  padding: 40px 32px;
+  border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
-  transition: all var(--transition-smooth);
-  border: none;
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
   z-index: 1;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  /* Added default shadow */
 }
 
-.value-card::before {
-  content: '';
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  bottom: -60px;
-  right: -60px;
-  z-index: -1;
-}
-
-.value-card::after {
-  content: '';
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  bottom: 20px;
-  right: 40px;
-  z-index: -1;
-}
-
-/* Color Variants */
-.blue-card {
-  background-color: #e0f2fe;
-}
-
-.blue-card h3 {
-  color: #881337;
-}
-
-.green-card {
-  background-color: #dcfce7;
-}
-
-.green-card h3 {
-  color: #14532d;
-}
-
-.orange-card {
-  background-color: #ffedd5;
-}
-
-.orange-card h3 {
-  color: #7c2d12;
-}
-
-.purple-card {
-  background-color: #f5f3ff;
-}
-
-.purple-card h3 {
-  color: #5b21b6;
-}
-
-.value-card:hover {
+.journey-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 50px rgba(132, 116, 161, 0.12);
+  border-color: rgba(132, 116, 161, 0.15);
 }
 
-.value-icon {
-  width: 54px;
-  height: 54px;
+.journey-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 24px;
+}
+
+.journey-year-pill {
+  padding: 6px 16px;
+  background: var(--bg-section);
+  border-radius: 100px;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.journey-icon-box {
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 14px;
-  color: #1e293b;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  background: var(--glass-bg);
+  border-radius: 16px;
+  color: var(--text-heading);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-/* Ensure lucide icons are sized correctly */
-.value-icon svg {
-  width: 28px;
-  height: 28px;
+.journey-card:hover .journey-icon-box {
+  transform: rotate(10deg) scale(1.1);
 }
 
-.blue-card .value-icon {
-  color: #0369a1;
-}
-
-.green-card .value-icon {
-  color: #15803d;
-}
-
-.orange-card .value-icon {
-  color: #c2410c;
-}
-
-.purple-card .value-icon {
-  color: #6d28d9;
-}
-
-.value-card h3 {
+.journey-card-title {
   font-family: var(--font-heading);
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 16px;
+  color: var(--text-heading);
+  position: relative;
+  z-index: 2;
 }
+
+.journey-card-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 500;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Gradient Circles in Lower Right */
+.journey-card-gradient {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  bottom: -60px;
+  right: -60px;
+  filter: blur(50px);
+  opacity: 0.12;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.journey-card:hover .journey-card-gradient {
+  opacity: 0.25;
+  transform: scale(1.2);
+}
+
+/* Theme Variations */
+.teal-journey .journey-icon-box {
+  color: var(--teal);
+  background: rgba(8, 159, 157, 0.05);
+}
+
+.teal-journey .journey-card-gradient {
+  background: var(--teal);
+}
+
+.teal-journey:hover .journey-year-pill {
+  background: var(--teal);
+  color: white;
+  border-color: var(--teal);
+}
+
+.orange-journey .journey-icon-box {
+  color: var(--orange);
+  background: rgba(243, 146, 0, 0.05);
+}
+
+.orange-journey .journey-card-gradient {
+  background: var(--orange);
+}
+
+.orange-journey:hover .journey-year-pill {
+  background: var(--orange);
+  color: white;
+  border-color: var(--orange);
+}
+
+.purple-journey .journey-icon-box {
+  color: var(--purple);
+  background: rgba(132, 116, 161, 0.05);
+}
+
+.purple-journey .journey-card-gradient {
+  background: var(--purple);
+}
+
+.purple-journey:hover .journey-year-pill {
+  background: var(--purple);
+  color: white;
+  border-color: var(--purple);
+}
+
+.red-journey .journey-icon-box {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.red-journey .journey-card-gradient {
+  background: #ef4444;
+}
+
+.red-journey:hover .journey-year-pill {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
 
 .value-card p {
   color: #334155;

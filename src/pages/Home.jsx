@@ -533,7 +533,7 @@ export default function Home() {
                 <div className="faq-list">
                     {faqs.map((faq, i) => (
                         <AnimateOnScroll key={i} delay={i * 0.08}>
-                            <div className="faq-item">
+                            <div className={`faq-item ${openFaq === i ? 'active' : ''}`}>
                                 <div className="faq-question" onClick={() => toggleFaq(i)}>
                                     <span>{faq.q}</span>
                                     <span className={`faq-toggle ${openFaq === i ? 'open' : ''}`}>

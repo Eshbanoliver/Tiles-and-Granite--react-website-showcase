@@ -211,35 +211,7 @@ export default function Services() {
                 </div>
             </section>
 
-            {/* Brands Section */}
-            <section className="core-values" style={{ backgroundColor: 'var(--bg-main)' }}>
-                <div className="text-center">
-                    <AnimateOnScroll>
-                        <span className="section-label">Premium Partners</span>
-                        <h2 className="section-title">
-                            Trusted <span className="gradient-text">Brands</span> We Showcase
-                        </h2>
-                    </AnimateOnScroll>
-                </div>
-                <div className="values-grid">
-                    {[
-                        { icon: <Building2 size={32} color="#089F9D" />, title: 'Kajaria', desc: 'Premium quality with innovative tile designs.' },
-                        { icon: <Factory size={32} color="#089F9D" />, title: 'Somany', desc: 'Combining durability with elegant aesthetics.' },
-                        { icon: <Sparkles size={32} color="#089F9D" />, title: 'Johnson', desc: 'Cutting-edge technology in tile manufacturing.' },
-                        { icon: <Star size={32} color="#089F9D" />, title: 'Nitco', desc: 'World-class designs for sophisticated spaces.' },
-                        { icon: <Gem size={32} color="#089F9D" />, title: 'RAK Ceramics', desc: 'Global leader in ceramics and stone solutions.' },
-                        { icon: <ShieldCheck size={32} color="#089F9D" />, title: 'Asian Granito', desc: 'Versatile range of high-performance products.' },
-                    ].map((brand, i) => (
-                        <AnimateOnScroll key={i} delay={(i % 3) * 0.1}>
-                            <div className="value-card" style={{ padding: '32px' }}>
-                                <div className="value-icon" style={{ marginBottom: '16px' }}>{brand.icon}</div>
-                                <h3 style={{ fontSize: '20px' }}>{brand.title}</h3>
-                                <p style={{ fontSize: '14px' }}>{brand.desc}</p>
-                            </div>
-                        </AnimateOnScroll>
-                    ))}
-                </div>
-            </section>
+
 
             {/* CTA */}
             <section className="cta-section">

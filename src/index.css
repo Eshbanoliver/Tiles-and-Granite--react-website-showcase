@@ -1311,9 +1311,10 @@ h6 {
 
 /* Journey Section / Timeline Grid */
 .timeline-grid {
-  max-width: 1100px;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
   margin: 50px auto 0;
-  gap: 32px;
+  gap: 24px;
 }
 
 .journey-card {
@@ -1472,6 +1473,21 @@ h6 {
   background: #ef4444;
   color: white;
   border-color: #ef4444;
+}
+
+.black-journey .journey-icon-box {
+  color: #000000;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.black-journey .journey-card-gradient {
+  background: #000000;
+}
+
+.black-journey:hover .journey-year-pill {
+  background: #000000;
+  color: white;
+  border-color: #000000;
 }
 
 
@@ -3150,6 +3166,11 @@ h6 {
     width: 100%;
   }
 
+  .timeline-grid,
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .mv-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -3218,6 +3239,7 @@ h6 {
   .testimonials-grid,
   .testimonials-full-grid,
   .values-grid,
+  .timeline-grid,
   .why-grid {
     grid-template-columns: 1fr;
   }

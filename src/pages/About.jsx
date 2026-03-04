@@ -34,6 +34,13 @@ export default function About() {
             icon: Award,
             theme: 'red'
         },
+        {
+            year: 'Future',
+            title: 'Beyond Boundaries',
+            desc: 'Innovating with new materials, we aim to inspire generations by making luxury and premium quality accessible to every home.',
+            icon: ArrowRight,
+            theme: 'black'
+        },
     ];
 
     return (

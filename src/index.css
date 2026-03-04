@@ -1060,6 +1060,11 @@ h6 {
   gap: 28px;
   max-width: var(--container-max);
   margin: 40px auto 0;
+  align-items: stretch;
+}
+
+.services-grid>.animate-on-scroll {
+  height: 100%;
 }
 
 .service-card {
@@ -1071,6 +1076,9 @@ h6 {
   border: 2px solid var(--teal);
   border-radius: 48px 8px 48px 8px;
   transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card:hover {
@@ -1104,6 +1112,9 @@ h6 {
 
 .service-card-body {
   padding: 28px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card-icon {

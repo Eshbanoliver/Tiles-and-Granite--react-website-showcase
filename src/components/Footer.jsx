@@ -11,11 +11,8 @@ export default function Footer() {
                             src="/images/logo.png"
                             alt="Neelmani Tiles Logo"
                             className="site-logo"
-                            style={{ height: '50px', width: 'auto' }}
+                            style={{ height: '50px', width: 'auto', marginBottom: '20px' }}
                         />
-                        <h3 style={{ marginBottom: 0 }}>
-                            Neelmani <span className="gradient-text">Tiles & Granite</span>
-                        </h3>
                     </div>
                     <p>
                         Your trusted destination for premium quality tiles, marble, and granite in Jaipur.

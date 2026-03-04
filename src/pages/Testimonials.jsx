@@ -90,7 +90,7 @@ export default function Testimonials() {
 
             {/* Overall Rating */}
             <section className="metrics" style={{ paddingTop: '40px' }}>
-                <div className="metrics-grid" style={{ maxWidth: '800px', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+                <div className="metrics-grid metrics-3-col">
                     <AnimateOnScroll>
                         <div className="metric-card">
                             <div className="metric-number">4.9</div>

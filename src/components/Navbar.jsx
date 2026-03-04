@@ -38,9 +38,6 @@ export default function Navbar() {
                             className="site-logo"
                             style={{ height: '45px', width: 'auto' }}
                         />
-                        <span className="logo-text">
-                            Neelmani <span className="gradient-text">Tiles</span>
-                        </span>
                     </Link>
 
                     <div className="nav-links">

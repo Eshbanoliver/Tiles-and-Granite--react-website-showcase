@@ -59,7 +59,7 @@ export default function About() {
                     <AnimateOnScroll>
                         <div className="about-creative-visual">
                             <div className="about-image-wrapper creative-shape">
-                                <img src="/images/about-team.png" alt="Neelmani Tiles Showroom" />
+                                <img src="/images/about-showroom-creative.jpg" alt="Neelmani Tiles Showroom" />
                                 <div className="experience-badge">
                                     <span className="exp-number">10+</span>
                                     <span className="exp-text">Years of<br />Excellence</span>
@@ -144,31 +144,45 @@ export default function About() {
                 </div>
                 <div className="mv-grid">
                     <AnimateOnScroll>
-                        <div className="mv-card">
-                            <div className="mv-card-icon">
-                                <Target size={32} color="#089F9D" />
+                        <div className="mv-card-container teal-theme">
+                            <div className="mv-card">
+                                {/* Front Face */}
+                                <div className="mv-card-front">
+                                    <h3 className="flip-title">Our Mission</h3>
+                                </div>
+                                {/* Back Face */}
+                                <div className="mv-card-back">
+                                    <div className="mv-card-icon"><Target size={32} /></div>
+                                    <h3>Our Mission</h3>
+                                    <p>
+                                        To be Jaipur's most trusted tiles and granite provider by offering an unmatched
+                                        selection of premium quality products at competitive prices. We aim to simplify the
+                                        process of transforming spaces, providing expert guidance and personalized service
+                                        that exceeds customer expectations.
+                                    </p>
+                                </div>
                             </div>
-                            <h3>Our Mission</h3>
-                            <p>
-                                To be Jaipur's most trusted tiles and granite provider by offering an unmatched
-                                selection of premium quality products at competitive prices. We aim to simplify the
-                                process of transforming spaces, providing expert guidance and personalized service
-                                that exceeds customer expectations.
-                            </p>
                         </div>
                     </AnimateOnScroll>
                     <AnimateOnScroll delay={0.15}>
-                        <div className="mv-card">
-                            <div className="mv-card-icon">
-                                <Eye size={32} color="#089F9D" />
+                        <div className="mv-card-container purple-theme">
+                            <div className="mv-card">
+                                {/* Front Face */}
+                                <div className="mv-card-front">
+                                    <h3 className="flip-title">Our Vision</h3>
+                                </div>
+                                {/* Back Face */}
+                                <div className="mv-card-back">
+                                    <div className="mv-card-icon"><Eye size={32} /></div>
+                                    <h3>Our Vision</h3>
+                                    <p>
+                                        To become the leading tiles and granite showroom in Rajasthan, recognized for our
+                                        vast collection, exceptional customer service, and commitment to quality. We envision
+                                        helping thousands of families and businesses create spaces that inspire and endure for
+                                        generations.
+                                    </p>
+                                </div>
                             </div>
-                            <h3>Our Vision</h3>
-                            <p>
-                                To become the leading tiles and granite showroom in Rajasthan, recognized for our
-                                vast collection, exceptional customer service, and commitment to quality. We envision
-                                helping thousands of families and businesses create spaces that inspire and endure for
-                                generations.
-                            </p>
                         </div>
                     </AnimateOnScroll>
                 </div>

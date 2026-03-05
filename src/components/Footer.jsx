@@ -7,12 +7,14 @@ export default function Footer() {
             <div className="footer-grid">
                 <div className="footer-brand">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-                        <img
-                            src="/images/logo.png"
-                            alt="Neelmani Tiles Logo"
-                            className="site-logo"
-                            style={{ height: '50px', width: 'auto', marginBottom: '20px' }}
-                        />
+                        <Link to="/">
+                            <img
+                                src="/images/logo.png"
+                                alt="Neelmani Tiles Logo"
+                                className="site-logo"
+                                style={{ height: '50px', width: 'auto', marginBottom: '20px' }}
+                            />
+                        </Link>
                     </div>
                     <p>
                         Your trusted destination for premium quality tiles, marble, and granite in Jaipur.
@@ -76,7 +78,7 @@ export default function Footer() {
             <div className="footer-bottom">
                 <p>
                     <Copyright size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} />
-                    Copyright 2026 | - Neelmani Tiles and Granite | All Rights Reserved | Powered by{' '}
+                    Copyright 2026 | - <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Neelmani Tiles and Granite</Link> | All Rights Reserved | Powered by{' '}
                     <a href="https://shapesway.in" target="_blank" rel="noopener" style={{ color: '#28a745' }}>
                         Shapesway Technologies Pvt. Ltd.
                     </a>

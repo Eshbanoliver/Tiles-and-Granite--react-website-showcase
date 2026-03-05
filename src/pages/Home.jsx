@@ -313,8 +313,8 @@ export default function Home() {
                                     <div className="service-card-icon">{service.icon}</div>
                                     <h3>{service.title}</h3>
                                     <p>{service.desc}</p>
-                                    <Link to={`/services/${service.slug}`} className="btn btn-secondary" style={{ marginTop: '16px', padding: '8px 16px', fontSize: '13px' }}>
-                                        Discover More <ChevronRight size={14} />
+                                    <Link to={`/services/${service.slug}`} className="btn btn-primary discover-btn" style={{ marginTop: '16px' }}>
+                                        Discover More <span className="arrow">→</span>
                                     </Link>
                                 </div>
                             </div>

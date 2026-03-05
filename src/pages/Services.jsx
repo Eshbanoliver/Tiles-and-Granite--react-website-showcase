@@ -161,8 +161,8 @@ export default function Services() {
                                     <div className="service-card-icon">{service.icon}</div>
                                     <h3>{service.title}</h3>
                                     <p>{service.desc}</p>
-                                    <Link to={`/services/${service.slug}`} className="btn btn-secondary" style={{ marginTop: '20px', padding: '10px 20px', fontSize: '14px' }}>
-                                        Discover More <ArrowRight size={16} style={{ marginLeft: '4px' }} />
+                                    <Link to={`/services/${service.slug}`} className="btn btn-primary discover-btn" style={{ marginTop: '20px' }}>
+                                        Discover More <span className="arrow">→</span>
                                     </Link>
                                 </div>
                             </div>

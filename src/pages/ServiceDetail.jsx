@@ -26,6 +26,7 @@ const serviceDetails = {
         icon: <Home size={24} />,
         heroImg: '/images/hero-1.jpg',
         mainImg: '/images/service-living.png',
+        whatIsIt: 'Floor tiles are durable, water-resistant surface coverings typically made from ceramics, stone, metal, or baked clay. They are designed to withstand mechanical stress, moisture, and foot traffic while providing aesthetic appeal to a room\'s interior.',
         description: 'Transform your living spaces with our premium collection of floor tiles. Designed for both elegance and endurance, our tiles offer the perfect foundation for your home or office.',
         details: 'Our floor tiles are manufactured using state-of-the-art technology to ensure they stand up to heavy foot traffic while maintaining their pristine appearance. We offer a vast selection ranging from classic ceramic to polished porcelain and heavy-duty vitrified options.',
         keyPoints: [
@@ -46,6 +47,7 @@ const serviceDetails = {
         icon: <Layout size={24} />,
         heroImg: '/images/hero-2.jpg',
         mainImg: '/images/marble-texture.png',
+        whatIsIt: 'Wall tiles are thinner and lighter than floor tiles, designed specifically for vertical surfaces. They are non-load-bearing and often glazed for water resistance and decorative appeal, making them perfect for kitchens, bathrooms, and accent walls.',
         description: 'Elevate your walls with our stunning range of designer wall tiles. From kitchen backsplashes to feature walls, our collection adds depth and character to any vertical surface.',
         details: 'Wall tiles are more than just protection; they are an expression of style. Our collection features a wide array of textures, 3D patterns, and artistic designs that can turn a plain wall into a masterpiece. They are easy to install and even easier to clean.',
         keyPoints: [
@@ -65,6 +67,7 @@ const serviceDetails = {
         icon: <Droplets size={24} />,
         heroImg: '/images/hero-3.jpg',
         mainImg: '/images/service-bathroom.png',
+        whatIsIt: 'Bathroom tiles are specialized moisture-resistant tiles that prioritize safety (anti-skid) and hygiene. They are designed to withstand constant water exposure and humidity without deteriorating or losing their anti-bacterial properties.',
         description: 'Create your private sanctuary with our specialized bathroom tiles. We focus on safety, hygiene, and aesthetics to give you a spa-like experience at home.',
         details: 'Bathrooms require tiles that can handle constant moisture and provide safety. Our anti-skid floor tiles and matching wall patterns ensure a cohesive look while keeping you safe. Available in various themes from modern minimalist to luxury traditional.',
         keyPoints: [
@@ -84,6 +87,7 @@ const serviceDetails = {
         icon: <UtensilsCrossed size={24} />,
         heroImg: '/images/hero-1.jpg',
         mainImg: '/images/service-kitchen.png',
+        whatIsIt: 'Kitchen countertops are heavy-duty, flat work surfaces used for food preparation. Our countertops are made from premium natural stones like granite and marble, offering heat resistance, durability, and a luxurious finish to the heart of the home.',
         description: 'The heart of your home deserves the best. Our granite and marble countertops combine luxury with the ruggedness needed for everyday culinary tasks.',
         details: 'Our kitchen surfaces are hand-selected for their beauty and strength. Granite is the choice for durability, while marble offers unmatched elegance. We provide precision cutting and finishing to fit your kitchen layout perfectly.',
         keyPoints: [
@@ -103,6 +107,7 @@ const serviceDetails = {
         icon: <Landmark size={24} />,
         heroImg: '/images/hero-2.jpg',
         mainImg: '/images/hero-showroom.png',
+        whatIsIt: 'Granite slabs are large, flat pieces of natural rock quarried from the earth. Known for extreme hardness and unique crystalline patterns, these slabs are cut to size for various architectural uses including flooring, wall cladding, and stairs.',
         description: 'Discover the raw beauty of natural granite. Our extensive collection of Indian and imported slabs offers endless possibilities for floors, stairs, and cladding.',
         details: 'Granite is one of the hardest materials on earth, making it perfect for both interior and exterior applications. We source our slabs from the finest quarries, ensuring consistent quality and stunning natural patterns.',
         keyPoints: [
@@ -122,6 +127,7 @@ const serviceDetails = {
         icon: <Gem size={24} />,
         heroImg: '/images/hero-3.jpg',
         mainImg: '/images/marble-texture.png',
+        whatIsIt: 'Marble is a metamorphic rock formed from limestone, known for its soft veining and high polish. It represents the pinnacle of luxury in architectural design, offering a unique natural aesthetic where no two pieces are ever identical.',
         description: 'Experience timeless luxury with Neelmani\'s marble and natural stone collection. Perfect for those who want their space to reflect opulence and sophisticated taste.',
         details: 'From the pristine white of Makrana to the exotic patterns of Italian marble, our collection is curated for the discerning customer. Natural stone brings a unique character to your home that no man-made material can replicate.',
         keyPoints: [
@@ -141,6 +147,7 @@ const serviceDetails = {
         icon: <Building2 size={24} />,
         heroImg: '/images/hero-1.jpg',
         mainImg: '/images/service-living.png',
+        whatIsIt: 'Commercial projects involve specialized stone and tile solutions tailored for high-traffic public spaces. These products prioritize industrial-grade durability, safety compliance, and consistent aesthetics across large-scale installations.',
         description: 'We provide specialized stone and tile solutions for large-scale commercial builds. From corporate offices to retail showrooms, we deliver quality at scale.',
         details: 'Commercial spaces require materials that are not just beautiful but can withstand extreme use. We offer bulk supply, project-specific customization, and technical advisory for architects and contractors.',
         keyPoints: [
@@ -160,12 +167,13 @@ const serviceDetails = {
         icon: <HardHat size={24} />,
         heroImg: '/images/hero-2.jpg',
         mainImg: '/images/hero-showroom.png',
+        whatIsIt: 'Vitrified tiles are a type of ceramic tile with very low porosity. They are created by a process called vitrification, which gives them qualities similar to glass, making them extremely strong, stain-resistant, and virtually waterproof.',
         description: 'The modern standard for high-performance flooring. Vitrified tiles offer a near-perfect surface that is incredibly strong and virtually maintenance-free.',
         details: 'Vitrification makes tiles extremely dense and low-porous. This results in a tile that is resistant to water, stains, and mechanical stress. Our digital vitrified tiles come in realistic marble, wood, and stone finishes.',
         keyPoints: [
             'Near-zero water absorption',
             'Highly resistant to stains and scratches',
-            'Precision-cut for thin grout lines',
+            'Precision cut for thin grout lines',
             'Available in Full Body, Double Charged, and Glazed',
             'Consistent color and texture'
         ],
@@ -208,6 +216,20 @@ export default function ServiceDetail() {
                         )}
                     </h1>
                     <p>{service.description}</p>
+                </div>
+            </section>
+
+            {/* WHAT IS IT SECTION */}
+            <section className="about-product-info" style={{ padding: '60px 0 0', backgroundColor: 'var(--bg-main)' }}>
+                <div className="container" style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 20px' }}>
+                    <AnimateOnScroll>
+                        <div className="glass-card" style={{ padding: '40px', borderLeft: '6px solid var(--teal)', background: 'white' }}>
+                            <h2 style={{ fontSize: '28px', marginBottom: '15px' }}>What is <span className="gradient-text">{service.title}</span>?</h2>
+                            <p style={{ fontSize: '18px', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+                                {service.whatIsIt}
+                            </p>
+                        </div>
+                    </AnimateOnScroll>
                 </div>
             </section>
 
@@ -306,7 +328,7 @@ export default function ServiceDetail() {
 
             {/* BACK LINK */}
             <div className="container" style={{ padding: '40px 20px', textAlign: 'center' }}>
-                <Link to="/services" className="btn btn-secondary discover-btn" style={{ display: 'inline-flex', margin: '0 auto' }}>
+                <Link to="/services" className="btn btn-primary discover-btn" style={{ display: 'inline-flex', margin: '0 auto' }}>
                     <span className="arrow-left">←</span> Back to all services
                 </Link>
             </div>

@@ -1,16 +1,82 @@
-# React + Vite
+# Premium Tile & Stone Showcase Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance web application designed for a premium tiles and granite showroom. This project focuses on high-end aesthetics, luxury user experience, and robust SEO optimization using a modern web tech stack.
 
-Currently, two official plugins are available:
+## 🚀 Technology Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend Core**: [React 19](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Routing**: [React Router DOM v7](https://reactrouter.com/)
+- **Iconography**: [Lucide React](https://lucide.dev/)
+- **Styling**: Vanilla CSS3 with a custom Design System
+  - Glassmorphism UI
+  - CSS Variables for Design Tokens
+  - Flexbox/Grid layouts
+- **Animations**: 
+  - Custom Intersection Observer for Scroll Animations
+  - CSS3 Keyframes & Transitions
+  - Dynamic Hover Transforms
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💎 Premium Component System
+- **Luxury Bubble Mega Menu**: A floating, centered dropdown menu with glassmorphism effects and pointing arrow indicators.
+- **Dynamic Hero Slider**: Multi-slide landing screen with smooth background transitions and interactive metric cards.
+- **Glassmorphism UI**: Frosted glass effects applied to navigation, cards, and interactive elements.
 
-## Expanding the ESLint configuration
+### 🎨 Advanced Interactive Styling
+- **Vibrant Radial Gradients**: Dynamic hover effects on product cards with expanding color gradients.
+- **Responsive Animations**: Staggered entry animations for grids and content sections.
+- **Spring-loaded Transitions**: High-quality cubic-bezier curves for fluid interactions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📱 Responsive & Mobile First
+- Custom-tailored mobile navigation with nested service links.
+- Fluid typography and grid adjustments for all screen sizes.
+- Optimized touch targets and spacing for mobile users.
+
+### 🌐 Performance & SEO
+- **Semantic HTML5**: Proper heading hierarchy and structural elements.
+- **SEO Optimization**: Integrated `sitemap.xml`, `robots.txt`, and comprehensive metadata.
+- **Optimized Assets**: Modern image formats and lazy-loading techniques.
+
+## 🛠️ Project Structure
+
+```text
+src/
+├── components/     # Reusable UI components (Navbar, Footer, AnimateOnScroll)
+├── pages/          # Page-level components (Home, Services, Contact, etc.)
+├── assets/         # Static global assets
+└── index.css       # Core Design System and global styles
+public/
+├── images/         # Optimized product and display images
+├── sitemap.xml     # SEO Sitemap
+└── robots.txt      # Search engine crawler instructions
+```
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
+
+### Installation
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+Start the local development server:
+```bash
+npm run dev
+```
+
+### Production Build
+Generate an optimized production bundle:
+```bash
+npm run build
+```
+
+---
+*Created with a focus on delivering a high-end, luxury digital presence for premium retail showrooms.*

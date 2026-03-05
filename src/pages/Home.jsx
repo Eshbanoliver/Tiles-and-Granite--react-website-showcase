@@ -262,7 +262,7 @@ export default function Home() {
                 <div className="about-preview-grid">
                     <AnimateOnScroll>
                         <div className="about-preview-image">
-                            <img src="/images/about-team.png" alt="Neelmani Tiles showroom" />
+                            <img src="/images/about-showroom.png" alt="Neelmani Tiles showroom" />
                         </div>
                     </AnimateOnScroll>
                     <AnimateOnScroll delay={0.2}>

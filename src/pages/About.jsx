@@ -70,7 +70,7 @@ export default function About() {
                     <AnimateOnScroll>
                         <div className="about-creative-visual">
                             <div className="about-image-wrapper creative-shape">
-                                <img src="/images/about-showroom-creative.jpg" alt="Neelmani Tiles Showroom" />
+                                <img src="/images/about-showroom.png" alt="Neelmani Tiles Showroom" />
                                 <div className="experience-badge">
                                     <span className="exp-number">10+</span>
                                     <span className="exp-text">Years of<br />Excellence</span>

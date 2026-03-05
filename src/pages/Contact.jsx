@@ -47,60 +47,68 @@ export default function Contact() {
                     {/* Left Column - Info */}
                     <div>
                         <AnimateOnScroll>
-                            <div className="contact-info-card">
-                                <h3>Get In Touch</h3>
+                            <div className="uiverse-card-container">
+                                <div className="uiverse-card">
+                                    <div className="circle"></div>
+                                    <div className="circle"></div>
+                                    <div className="card-inner">
+                                        <div className="contact-info-card">
+                                            <h3>Get In Touch</h3>
 
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
-                                        <MapPin size={20} color="#089F9D" />
-                                    </div>
-                                    <div className="contact-info-text">
-                                        <h4>Visit Our Showroom</h4>
-                                        <p>
-                                            Plot No. B 9-10, Narayan Vihar B-Block, Near Utsav Garden,
-                                            Mansarover, Jaipur – 302026
-                                        </p>
-                                    </div>
-                                </div>
+                                            <div className="contact-info-item">
+                                                <div className="contact-info-icon">
+                                                    <MapPin size={20} color="#089F9D" />
+                                                </div>
+                                                <div className="contact-info-text">
+                                                    <h4>Visit Our Showroom</h4>
+                                                    <p>
+                                                        Plot No. B 9-10, Narayan Vihar B-Block, Near Utsav Garden,
+                                                        Mansarover, Jaipur – 302026
+                                                    </p>
+                                                </div>
+                                            </div>
 
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
-                                        <Phone size={20} color="#089F9D" />
-                                    </div>
-                                    <div className="contact-info-text">
-                                        <h4>Call Us</h4>
-                                        <p>
-                                            <a href="tel:+917877702774">+91 7877702774</a>
-                                        </p>
-                                    </div>
-                                </div>
+                                            <div className="contact-info-item">
+                                                <div className="contact-info-icon">
+                                                    <Phone size={20} color="#089F9D" />
+                                                </div>
+                                                <div className="contact-info-text">
+                                                    <h4>Call Us</h4>
+                                                    <p>
+                                                        <a href="tel:+917877702774">+91 7877702774</a>
+                                                    </p>
+                                                </div>
+                                            </div>
 
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
-                                        <MessageCircle size={20} color="#089F9D" />
-                                    </div>
-                                    <div className="contact-info-text">
-                                        <h4>WhatsApp</h4>
-                                        <p>
-                                            <a
-                                                href="https://wa.me/917877702774?text=Hello%2C%20I%20am%20interested%20in%20your%20tiles%20and%20granite%20products."
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                +91 7877702774
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
+                                            <div className="contact-info-item">
+                                                <div className="contact-info-icon">
+                                                    <MessageCircle size={20} color="#089F9D" />
+                                                </div>
+                                                <div className="contact-info-text">
+                                                    <h4>WhatsApp</h4>
+                                                    <p>
+                                                        <a
+                                                            href="https://wa.me/917877702774?text=Hello%2C%20I%20am%20interested%20in%20your%20tiles%20and%20granite%20products."
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                        >
+                                                            +91 7877702774
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
 
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
-                                        <Clock size={20} color="#089F9D" />
-                                    </div>
-                                    <div className="contact-info-text">
-                                        <h4>Business Hours</h4>
-                                        <p>Monday – Saturday: 9:00 AM – 8:00 PM</p>
-                                        <p>Sunday: By Appointment</p>
+                                            <div className="contact-info-item">
+                                                <div className="contact-info-icon">
+                                                    <Clock size={20} color="#089F9D" />
+                                                </div>
+                                                <div className="contact-info-text">
+                                                    <h4>Business Hours</h4>
+                                                    <p>Monday – Saturday: 9:00 AM – 8:00 PM</p>
+                                                    <p>Sunday: By Appointment</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -126,100 +134,88 @@ export default function Contact() {
                     {/* Right Column - Form */}
                     <div>
                         <AnimateOnScroll delay={0.1}>
-                            <div className="contact-form-container">
-                                <h3>Send Us a Message</h3>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '24px' }}>
-                                    Fill in the form below and we'll get back to you via WhatsApp.
-                                </p>
+                            <div className="uiverse-card-container">
+                                <div className="uiverse-card">
+                                    <div className="circle"></div>
+                                    <div className="circle"></div>
+                                    <div className="card-inner">
+                                        <div className="contact-form-container">
+                                            <h3>Send Us a Message</h3>
+                                            <p style={{ color: 'var(--text-muted)', fontSize: '14px', marginBottom: '24px' }}>
+                                                Fill in the form below and we'll get back to you via WhatsApp.
+                                            </p>
 
-                                <form onSubmit={handleSubmit} id="contact-form">
-                                    <div className="form-group">
-                                        <label htmlFor="name">Full Name *</label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            placeholder="Enter your full name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
+                                            <form onSubmit={handleSubmit} id="contact-form">
+                                                <div className="form-group">
+                                                    <label htmlFor="name">Full Name *</label>
+                                                    <input
+                                                        type="text"
+                                                        id="name"
+                                                        name="name"
+                                                        placeholder="Enter your full name"
+                                                        value={formData.name}
+                                                        onChange={handleChange}
+                                                        required
+                                                    />
+                                                </div>
 
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                                        <div className="form-group">
-                                            <label htmlFor="phone">Phone Number *</label>
-                                            <input
-                                                type="tel"
-                                                id="phone"
-                                                name="phone"
-                                                placeholder="+91 XXXXX XXXXX"
-                                                value={formData.phone}
-                                                onChange={handleChange}
-                                                required
-                                            />
+                                                <div className="form-group-row">
+                                                    <div className="form-group">
+                                                        <label htmlFor="phone">Phone Number *</label>
+                                                        <input
+                                                            type="tel"
+                                                            id="phone"
+                                                            name="phone"
+                                                            placeholder="+91 XXXXX XXXXX"
+                                                            value={formData.phone}
+                                                            onChange={handleChange}
+                                                            required
+                                                        />
+                                                    </div>
+                                                    <div className="form-group">
+                                                        <label htmlFor="email">Email (Optional)</label>
+                                                        <input
+                                                            type="email"
+                                                            id="email"
+                                                            name="email"
+                                                            placeholder="your@email.com"
+                                                            value={formData.email}
+                                                            onChange={handleChange}
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label htmlFor="subject">Subject *</label>
+                                                    <input
+                                                        type="text"
+                                                        id="subject"
+                                                        name="subject"
+                                                        placeholder="e.g. Need tiles for kitchen"
+                                                        value={formData.subject}
+                                                        onChange={handleChange}
+                                                        required
+                                                    />
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label htmlFor="message">Message *</label>
+                                                    <textarea
+                                                        id="message"
+                                                        name="message"
+                                                        rows="5"
+                                                        placeholder="Tell us about your requirements..."
+                                                        value={formData.message}
+                                                        onChange={handleChange}
+                                                        required
+                                                    ></textarea>
+                                                </div>
+
+                                                <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+                                                    <MessageCircle size={18} style={{ marginRight: '8px' }} /> Send via WhatsApp
+                                                </button>
+                                            </form>
                                         </div>
-                                        <div className="form-group">
-                                            <label htmlFor="email">Email (Optional)</label>
-                                            <input
-                                                type="email"
-                                                id="email"
-                                                name="email"
-                                                placeholder="your@email.com"
-                                                value={formData.email}
-                                                onChange={handleChange}
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="subject">Subject *</label>
-                                        <input
-                                            type="text"
-                                            id="subject"
-                                            name="subject"
-                                            placeholder="e.g. Need tiles for kitchen"
-                                            value={formData.subject}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="message">Message *</label>
-                                        <textarea
-                                            id="message"
-                                            name="message"
-                                            rows="5"
-                                            placeholder="Tell us about your requirements..."
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            required
-                                        ></textarea>
-                                    </div>
-
-                                    <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                                        <MessageCircle size={18} style={{ marginRight: '8px' }} /> Send via WhatsApp
-                                    </button>
-                                </form>
-
-                                <div style={{ marginTop: '24px', textAlign: 'center' }}>
-                                    <p style={{ color: 'var(--text-muted)', fontSize: '13px', marginBottom: '12px' }}>
-                                        Or reach us directly:
-                                    </p>
-                                    <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                        <a href="tel:+917877702774" className="btn btn-secondary" style={{ padding: '10px 20px', fontSize: '14px' }}>
-                                            <Phone size={14} style={{ marginRight: '6px' }} /> Call Now
-                                        </a>
-                                        <a
-                                            href="https://wa.me/917877702774"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="btn btn-whatsapp"
-                                            style={{ padding: '10px 20px', fontSize: '14px' }}
-                                        >
-                                            <MessageCircle size={14} style={{ marginRight: '6px' }} /> WhatsApp
-                                        </a>
                                     </div>
                                 </div>
                             </div>

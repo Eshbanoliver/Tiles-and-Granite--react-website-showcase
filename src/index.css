@@ -2593,6 +2593,14 @@ h6 {
   transform: translateX(8px);
 }
 
+.discover-btn .arrow-left {
+  transition: transform 0.3s ease;
+}
+
+.discover-btn:hover .arrow-left {
+  transform: translateX(-8px);
+}
+
 /* ===== CORE VALUES SETTINGS ===== */
 .values-grid {
   display: grid;

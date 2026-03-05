@@ -304,6 +304,13 @@ export default function ServiceDetail() {
                 </div>
             </section>
 
+            {/* BACK LINK */}
+            <div className="container" style={{ padding: '40px 20px', textAlign: 'center' }}>
+                <Link to="/services" className="btn btn-secondary discover-btn" style={{ display: 'inline-flex', margin: '0 auto' }}>
+                    <span className="arrow-left">←</span> Back to all services
+                </Link>
+            </div>
+
             {/* CTA SECTION */}
             <section className="cta-section">
                 <AnimateOnScroll>
@@ -335,13 +342,6 @@ export default function ServiceDetail() {
                     </div>
                 </AnimateOnScroll>
             </section>
-
-            {/* BACK LINK */}
-            <div className="container" style={{ padding: '40px 20px', textAlign: 'center' }}>
-                <Link to="/services" className="btn btn-secondary" style={{ border: 'none', background: 'transparent' }}>
-                    <ArrowLeft size={18} style={{ marginRight: '8px' }} /> Back to all services
-                </Link>
-            </div>
         </div>
     );
 }

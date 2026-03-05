@@ -773,7 +773,8 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(8, 159, 157, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
   border-radius: 12px;
 }
 
@@ -786,14 +787,14 @@ h6 {
   font-family: var(--font-heading);
   font-size: 24px;
   font-weight: 800;
-  color: var(--teal);
+  color: var(--teal-light);
   line-height: 1.2;
 }
 
 .metric-label-small {
   font-size: 13px;
-  color: var(--text-muted);
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }

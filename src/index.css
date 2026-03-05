@@ -3618,6 +3618,15 @@ h6 {
   .slider-dot.active {
     width: 35px;
   }
+
+  .service-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .detail-image-wrapper img {
+    height: 300px !important;
+  }
 }
 
 @media (max-width: 480px) {

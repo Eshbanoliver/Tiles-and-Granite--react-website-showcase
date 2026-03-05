@@ -24,48 +24,56 @@ import AnimateOnScroll from '../components/AnimateOnScroll';
 export default function Services() {
     const services = [
         {
+            slug: 'floor-tiles',
             icon: <Home size={24} />,
             title: 'Floor Tiles',
             desc: 'Premium ceramic, vitrified, and porcelain floor tiles designed for durability and high-traffic resistance.',
             img: '/images/service-living.png',
         },
         {
+            slug: 'wall-tiles',
             icon: <Layout size={24} />,
             title: 'Wall Tiles',
             desc: 'Exquisite designer wall tiles that add character to your interiors with subtle textures and bold patterns.',
             img: '/images/marble-texture.png',
         },
         {
+            slug: 'bathroom-tiles',
             icon: <Droplets size={24} />,
             title: 'Bathroom Tiles',
             desc: 'Anti-skid and water-resistant tiles in stunning designs, perfect for a spa-like bathroom transformation.',
             img: '/images/service-bathroom.png',
         },
         {
+            slug: 'kitchen-countertops',
             icon: <UtensilsCrossed size={24} />,
             title: 'Kitchen Countertops',
             desc: 'Elegant and heat-resistant granite and marble surfaces that bring luxury to your culinary space.',
             img: '/images/service-kitchen.png',
         },
         {
+            slug: 'granite-slabs',
             icon: <Landmark size={24} />,
             title: 'Granite Slabs',
             desc: 'A massive collection of Indian and imported granite slabs for flooring, stairs, and decorative elements.',
             img: '/images/hero-showroom.png',
         },
         {
+            slug: 'marble-stone',
             icon: <Gem size={24} />,
             title: 'Marble & Stone',
             desc: 'Premium marble varieties, including Italian and natural stone, adding timeless elegance to any project.',
             img: '/images/marble-texture.png',
         },
         {
+            slug: 'commercial-projects',
             icon: <Building2 size={24} />,
             title: 'Commercial Projects',
             desc: 'High-quality stone and tile solutions tailored for offices, showrooms, and large-scale commercial builds.',
             img: '/images/service-living.png',
         },
         {
+            slug: 'vitrified-tiles',
             icon: <HardHat size={24} />,
             title: 'Vitrified Tiles',
             desc: 'Strong and stylish vitrified tiles that offer a seamless look with minimal maintenance for modern homes.',
@@ -153,6 +161,9 @@ export default function Services() {
                                     <div className="service-card-icon">{service.icon}</div>
                                     <h3>{service.title}</h3>
                                     <p>{service.desc}</p>
+                                    <Link to={`/services/${service.slug}`} className="btn btn-secondary" style={{ marginTop: '20px', padding: '10px 20px', fontSize: '14px' }}>
+                                        Discover More <ArrowRight size={16} style={{ marginLeft: '4px' }} />
+                                    </Link>
                                 </div>
                             </div>
                         </AnimateOnScroll>

@@ -97,18 +97,21 @@ export default function Home() {
 
     const services = [
         {
+            slug: 'floor-tiles',
             icon: '🏠',
             title: 'Floor Tiles',
             desc: 'Premium ceramic, vitrified, and porcelain floor tiles for every room.',
             img: '/images/service-living.png',
         },
         {
+            slug: 'bathroom-tiles',
             icon: '🚿',
             title: 'Bathroom Tiles',
             desc: 'Elegant wall and floor tiles for luxurious bathroom transformations.',
             img: '/images/service-bathroom.png',
         },
         {
+            slug: 'kitchen-countertops',
             icon: '🍽️',
             title: 'Kitchen Solutions',
             desc: 'Granite countertops and designer backsplash tiles for modern kitchens.',
@@ -310,6 +313,9 @@ export default function Home() {
                                     <div className="service-card-icon">{service.icon}</div>
                                     <h3>{service.title}</h3>
                                     <p>{service.desc}</p>
+                                    <Link to={`/services/${service.slug}`} className="btn btn-secondary" style={{ marginTop: '16px', padding: '8px 16px', fontSize: '13px' }}>
+                                        Discover More <ChevronRight size={14} />
+                                    </Link>
                                 </div>
                             </div>
                         </AnimateOnScroll>

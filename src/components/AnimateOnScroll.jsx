@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function AnimateOnScroll({ children, className = '', delay = 0 }) {
+export default function AnimateOnScroll({ children, className = '', delay = 0, variant = '' }) {
     const ref = useRef(null);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ export default function AnimateOnScroll({ children, className = '', delay = 0 })
                     }
                 });
             },
-            { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+            { threshold: 0.05, rootMargin: '0px 0px 100px 0px' }
         );
 
         if (ref.current) {
@@ -26,7 +26,7 @@ export default function AnimateOnScroll({ children, className = '', delay = 0 })
     return (
         <div
             ref={ref}
-            className={`animate-on-scroll ${className}`}
+            className={`animate-on-scroll ${variant} ${className}`}
             style={{ transitionDelay: `${delay}s` }}
         >
             {children}

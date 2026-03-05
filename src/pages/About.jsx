@@ -48,17 +48,19 @@ export default function About() {
             {/* Page Header */}
             <section className="page-header" style={{ backgroundImage: 'url("/about-hero-new.png")' }}>
                 <div className="page-header-container">
-                    <div className="page-header-breadcrumb">
-                        <Link to="/">Home</Link>
-                        <span>/</span>
-                        <span>About Us</span>
-                    </div>
-                    <h1>
-                        About <span className="gradient-text">Neelmani Tiles</span>
-                    </h1>
-                    <p>
-                        Learn about our journey, values, and commitment to bringing you the finest tiles and granite.
-                    </p>
+                    <AnimateOnScroll variant="slideUp">
+                        <div className="page-header-breadcrumb">
+                            <Link to="/">Home</Link>
+                            <span>/</span>
+                            <span>About Us</span>
+                        </div>
+                        <h1>
+                            About <span className="gradient-text">Neelmani Tiles</span>
+                        </h1>
+                        <p>
+                            Learn about our journey, values, and commitment to bringing you the finest tiles and granite.
+                        </p>
+                    </AnimateOnScroll>
                 </div>
             </section>
 

@@ -226,29 +226,31 @@ export default function ServiceDetail() {
             {/* HERO SECTION */}
             <section className="page-header" style={{ backgroundImage: `url("${service.heroImg}")` }}>
                 <div className="page-header-container">
-                    <div className="page-header-breadcrumb">
-                        <Link to="/">Home</Link>
-                        <span>/</span>
-                        <Link to="/services">Services</Link>
-                        <span>/</span>
-                        <span>{service.title}</span>
-                    </div>
-                    <h1>
-                        {service.title.split(' ').map((word, i) =>
-                            i === 0 ? <span key={i}>{word} </span> : <span key={i} className="gradient-text">{word} </span>
-                        )}
-                    </h1>
-                    <p>{service.description}</p>
+                    <AnimateOnScroll variant="slideUp">
+                        <div className="page-header-breadcrumb">
+                            <Link to="/">Home</Link>
+                            <span>/</span>
+                            <Link to="/services">Services</Link>
+                            <span>/</span>
+                            <span>{service.title}</span>
+                        </div>
+                        <h1>
+                            {service.title.split(' ').map((word, i) =>
+                                i === 0 ? <span key={i}>{word} </span> : <span key={i} className="gradient-text">{word} </span>
+                            )}
+                        </h1>
+                        <p>{service.description}</p>
+                    </AnimateOnScroll>
                 </div>
             </section>
 
             {/* WHAT IS IT SECTION */}
-            <section className="about-product-info" style={{ padding: '60px 0 0', backgroundColor: 'var(--bg-main)' }}>
-                <div className="container" style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 20px' }}>
-                    <AnimateOnScroll>
-                        <div className="glass-card" style={{ padding: '40px', borderLeft: '6px solid var(--teal)', background: 'white' }}>
-                            <h2 style={{ fontSize: '28px', marginBottom: '15px' }}>What is <span className="gradient-text">{service.title}</span>?</h2>
-                            <p style={{ fontSize: '18px', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+            <section className="about-product-info section-padding" style={{ paddingBottom: 0 }}>
+                <div className="container">
+                    <AnimateOnScroll variant="slideUp">
+                        <div className="what-is-it-card">
+                            <h2>What is <span className="gradient-text">{service.title}</span>?</h2>
+                            <p>
                                 {service.whatIsIt}
                             </p>
                         </div>
@@ -256,63 +258,76 @@ export default function ServiceDetail() {
                 </div>
             </section>
 
-            <section className="service-detail-content" style={{ padding: '80px 0' }}>
-                <div className="container" style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 20px' }}>
-                    <div className="service-grid-layout" style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '50px' }}>
+            <section className="service-detail-content section-padding">
+                <div className="container">
+                    <div className="service-grid-layout">
 
                         {/* LEFT SIDE - Details & Key Points */}
                         <div className="service-main-col">
-                            <AnimateOnScroll>
-                                <div className="detail-image-wrapper" style={{ marginBottom: '40px', borderRadius: '30px', overflow: 'hidden', boxShadow: 'var(--glass-shadow)' }}>
-                                    <img src={service.mainImg} alt={service.title} style={{ width: '100%', height: '500px', objectFit: 'cover' }} />
-                                </div>
-                                <div className="detail-info">
-                                    <span className="section-label">Product Overview</span>
-                                    <h2 style={{ fontSize: '32px', marginBottom: '20px' }}>Why Choose Our <span className="gradient-text">{service.title}</span>?</h2>
-                                    <p style={{ fontSize: '18px', color: 'var(--text-muted)', marginBottom: '40px', lineHeight: '1.8' }}>
-                                        {service.details}
-                                    </p>
-
-                                    <div className="key-points-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
-                                        {service.keyPoints.map((point, i) => (
-                                            <div key={i} className="key-point-item" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                                                <div style={{ color: 'var(--teal)', marginTop: '4px' }}><CheckCircle2 size={18} /></div>
-                                                <p style={{ fontWeight: '500', color: 'var(--text-heading)' }}>{point}</p>
-                                            </div>
-                                        ))}
-                                    </div>
+                            <AnimateOnScroll variant="slideRight">
+                                <div className="detail-image-wrapper">
+                                    <img src={service.mainImg} alt={service.title} />
                                 </div>
                             </AnimateOnScroll>
+
+                            <div className="detail-info">
+                                <AnimateOnScroll variant="slideUp">
+                                    <span className="section-label">Product Overview</span>
+                                    <h2>Why Choose Our <span className="gradient-text">{service.title}</span>?</h2>
+                                    <p style={{ marginBottom: '40px' }}>
+                                        {service.details}
+                                    </p>
+                                </AnimateOnScroll>
+
+                                <div className="key-points-grid">
+                                    {service.keyPoints.map((point, i) => (
+                                        <AnimateOnScroll key={i} delay={i * 0.1} variant="scaleUp">
+                                            <div className="key-point-item">
+                                                <div className="key-point-icon"><CheckCircle2 size={18} /></div>
+                                                <p style={{ fontWeight: '600', color: 'var(--text-heading)', margin: 0 }}>{point}</p>
+                                            </div>
+                                        </AnimateOnScroll>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
 
                         {/* RIGHT SIDE - Contact & FAQs */}
                         <div className="service-sidebar">
-                            <AnimateOnScroll delay={0.2}>
+                            <AnimateOnScroll variant="slideLeft" delay={0.2}>
                                 {/* Contact Card */}
-                                <div className="glass-card" style={{ padding: '32px', marginBottom: '40px', background: 'var(--glass-bg-strong)' }}>
-                                    <h3 style={{ marginBottom: '20px', fontSize: '24px' }}>Inquiry Now</h3>
-                                    <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '24px' }}>Get a custom quote or expert consultation for your project.</p>
+                                <div className="sidebar-contact-card">
+                                    <h3>Inquiry Now</h3>
+                                    <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '25px' }}>
+                                        Get a custom quote or expert consultation for your project.
+                                    </p>
 
-                                    <div className="sidebar-contact-list" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                                        <div style={{ display: 'flex', gap: '15px' }}>
-                                            <div style={{ background: 'rgba(8, 159, 157, 0.1)', padding: '10px', borderRadius: '10px', color: 'var(--teal)' }}><Phone size={20} /></div>
+                                    <div className="sidebar-contact-list" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                        <div className="contact-method">
+                                            <div className="contact-icon-box" style={{ background: 'rgba(8, 159, 157, 0.1)', color: 'var(--teal)' }}>
+                                                <Phone size={20} />
+                                            </div>
                                             <div>
-                                                <p style={{ fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.6 }}>Call Us</p>
-                                                <a href="tel:+917877702774" style={{ fontWeight: '600' }}>+91 7877702774</a>
+                                                <p style={{ fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.6, margin: 0 }}>Call Us</p>
+                                                <a href="tel:+917877702774" style={{ fontWeight: '700', fontSize: '16px' }}>+91 7877702774</a>
                                             </div>
                                         </div>
-                                        <div style={{ display: 'flex', gap: '15px' }}>
-                                            <div style={{ background: 'rgba(37, 211, 102, 0.1)', padding: '10px', borderRadius: '10px', color: '#25D366' }}><MessageCircle size={20} /></div>
+                                        <div className="contact-method">
+                                            <div className="contact-icon-box" style={{ background: 'rgba(37, 211, 102, 0.1)', color: '#25D366' }}>
+                                                <MessageCircle size={20} />
+                                            </div>
                                             <div>
-                                                <p style={{ fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.6 }}>WhatsApp</p>
-                                                <a href="https://wa.me/917877702774" style={{ fontWeight: '600' }}>Message Now</a>
+                                                <p style={{ fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.6, margin: 0 }}>WhatsApp</p>
+                                                <a href="https://wa.me/917877702774" style={{ fontWeight: '700', fontSize: '16px' }}>Message Now</a>
                                             </div>
                                         </div>
-                                        <div style={{ display: 'flex', gap: '15px' }}>
-                                            <div style={{ background: 'rgba(132, 116, 161, 0.1)', padding: '10px', borderRadius: '10px', color: 'var(--purple)' }}><MapPin size={20} /></div>
+                                        <div className="contact-method">
+                                            <div className="contact-icon-box" style={{ background: 'rgba(132, 116, 161, 0.1)', color: 'var(--purple)' }}>
+                                                <MapPin size={20} />
+                                            </div>
                                             <div>
-                                                <p style={{ fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.6 }}>Location</p>
-                                                <p style={{ fontWeight: '600', fontSize: '14px' }}>Mansarover, Jaipur</p>
+                                                <p style={{ fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.6, margin: 0 }}>Location</p>
+                                                <p style={{ fontWeight: '700', fontSize: '15px', margin: 0 }}>Mansarover, Jaipur</p>
                                             </div>
                                         </div>
                                     </div>
@@ -324,19 +339,21 @@ export default function ServiceDetail() {
 
                                 {/* FAQ Section */}
                                 <div className="faq-sidebar">
-                                    <h3 style={{ marginBottom: '20px', fontSize: '22px' }}>Common Questions</h3>
-                                    <div className="sidebar-faq-list" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                    <h3 className="faq-sidebar-title">Common Questions</h3>
+                                    <div className="sidebar-faq-list">
                                         {service.faqs.map((faq, i) => (
-                                            <div key={i} className={`faq-item-small ${openFaq === i ? 'active' : ''}`} style={{ borderBottom: '1px solid rgba(0,0,0,0.05)', paddingBottom: '15px' }}>
+                                            <div key={i} className={`faq-item-small ${openFaq === i ? 'active' : ''}`}>
                                                 <div
+                                                    className="faq-header-small"
                                                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                                                    style={{ display: 'flex', justifyContent: 'space-between', cursor: 'pointer', fontWeight: '600', fontSize: '15px', color: 'var(--text-heading)' }}
                                                 >
-                                                    <span>{faq.q}</span>
-                                                    <span style={{ color: 'var(--teal)', transition: 'transform 0.3s', transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0)' }}><Plus size={16} /></span>
+                                                    <h4>{faq.q}</h4>
+                                                    <span className="faq-icon-small"><Plus size={18} /></span>
                                                 </div>
-                                                <div style={{ maxHeight: openFaq === i ? '200px' : '0', overflow: 'hidden', transition: 'all 0.3s ease' }}>
-                                                    <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginTop: '10px', lineHeight: '1.6' }}>{faq.a}</p>
+                                                <div className="faq-answer-small">
+                                                    <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
+                                                        {faq.a}
+                                                    </p>
                                                 </div>
                                             </div>
                                         ))}
@@ -350,10 +367,12 @@ export default function ServiceDetail() {
             </section>
 
             {/* BACK LINK */}
-            <div className="container" style={{ padding: '40px 20px', textAlign: 'center' }}>
-                <Link to="/services" className="btn btn-primary discover-btn" style={{ display: 'inline-flex', margin: '0 auto' }}>
-                    <span className="arrow-left">←</span> Back to all services
-                </Link>
+            <div className="container" style={{ padding: '0 20px 60px', textAlign: 'center' }}>
+                <AnimateOnScroll variant="scaleUp">
+                    <Link to="/services" className="btn btn-primary discover-btn" style={{ display: 'inline-flex', margin: '0 auto' }}>
+                        <span className="arrow-left">←</span> Back to all services
+                    </Link>
+                </AnimateOnScroll>
             </div>
 
             {/* CTA SECTION */}

@@ -1296,21 +1296,74 @@ h6 {
   margin-top: 30px;
 }
 
+.key-points-grid>.animate-on-scroll {
+  height: 100%;
+}
+
 .key-point-item {
   display: flex;
   gap: 15px;
   align-items: flex-start;
-  padding: 18px;
+  padding: 24px 20px;
   background: var(--bg-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--glass-border);
-  transition: var(--transition-smooth);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Base Gradient Dot */
+.key-point-item::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.1;
+  z-index: -1;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .key-point-item:hover {
   background: var(--bg-card);
-  border-color: var(--teal-light);
-  transform: translateY(-3px);
+  border-color: rgba(132, 116, 161, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(132, 116, 161, 0.1);
+}
+
+.key-point-item:hover::after {
+  opacity: 0.4;
+  transform: scale(2.5) translate(-10px, -10px);
+}
+
+/* Vibrant Color Variants */
+.key-point-item:nth-child(5n+1)::after {
+  background: var(--teal);
+}
+
+.key-point-item:nth-child(5n+2)::after {
+  background: var(--purple);
+}
+
+.key-point-item:nth-child(5n+3)::after {
+  background: #f43f5e;
+  /* Rose */
+}
+
+.key-point-item:nth-child(5n+4)::after {
+  background: #8b5cf6;
+  /* Violet */
+}
+
+.key-point-item:nth-child(5n+5)::after {
+  background: #3b82f6;
+  /* Blue */
 }
 
 .key-point-icon {

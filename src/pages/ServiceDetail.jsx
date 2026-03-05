@@ -39,7 +39,9 @@ const serviceDetails = {
         faqs: [
             { q: 'How do I choose the right size for my room?', a: 'Generally, larger tiles make a small room look bigger. For standard rooms, 600x600mm or 800x800mm are popular choices.' },
             { q: 'Are these tiles slip-resistant?', a: 'Yes, we offer specific matte and textured finishes that provide excellent grip, making them safe for all areas.' },
-            { q: 'Can I use these for outdoor spaces?', a: 'While many are suitable, we recommend our specialized heavy-duty outdoor tiles for terraces and balconies.' }
+            { q: 'Can I use these for outdoor spaces?', a: 'While many are suitable, we recommend our specialized heavy-duty outdoor tiles for terraces and balconies.' },
+            { q: 'How do I calculate how many tiles I need?', a: 'Measure your room area, add 10% for cutting waste and future repairs, then divide by the coverage area of one tile box.' },
+            { q: 'Can these tiles be installed over existing flooring?', a: 'Yes, provided the existing surface is perfectly level, solid, and properly prepared with the right adhesive.' }
         ]
     },
     'wall-tiles': {
@@ -59,7 +61,10 @@ const serviceDetails = {
         ],
         faqs: [
             { q: 'Can floor tiles be used on walls?', a: 'Yes, floor tiles can be used on walls, but wall tiles are generally not recommended for floors as they aren\'t designed to bear weight.' },
-            { q: 'Are they suitable for behind the stove?', a: 'Absolutely, our ceramic and porcelain wall tiles are heat resistant and very easy to wipe clean after cooking.' }
+            { q: 'Are they suitable for behind the stove?', a: 'Absolutely, our ceramic and porcelain wall tiles are heat resistant and very easy to wipe clean after cooking.' },
+            { q: 'What is the best way to clean wall tiles?', a: 'A simple mixture of warm water and mild detergent works best. Avoid abrasive scrubbers that might scratch the glaze.' },
+            { q: 'Do wall tiles require special adhesive?', a: 'Yes, wall-specific adhesives are designed to prevent the tiles from sliding down while the bond is setting.' },
+            { q: 'Can I get 3D textured tiles?', a: 'Yes, we have a specialized collection of 3D and high-depth wall tiles that add significant visual interest to any space.' }
         ]
     },
     'bathroom-tiles': {
@@ -79,7 +84,10 @@ const serviceDetails = {
         ],
         faqs: [
             { q: 'What is anti-skid rating?', a: 'We provide tiles with R-ratings (R9-R11) that indicate the level of slip resistance. Higher is better for wet areas.' },
-            { q: 'How do I prevent grout mold?', a: 'We recommend using epoxy grout and proper ventilation to keep your bathroom tiles looking new.' }
+            { q: 'How do I prevent grout mold?', a: 'We recommend using epoxy grout and proper ventilation to keep your bathroom tiles looking new.' },
+            { q: 'Should I use large or small tiles in a small bathroom?', a: 'Large tiles with fewer grout lines often make a small bathroom feel more spacious and are easier to clean.' },
+            { q: 'Are these tiles resistant to soap scum?', a: 'Our glazed ceramic and porcelain tiles are designed to resist soap buildup and can be easily wiped clean.' },
+            { q: 'Do you offer matching floor and wall designs?', a: 'Yes, we have curated "Bathroom Concepts" where the floor and wall tiles are designed to complement each other perfectly.' }
         ]
     },
     'kitchen-countertops': {
@@ -99,7 +107,10 @@ const serviceDetails = {
         ],
         faqs: [
             { q: 'Which is better, Marble or Granite?', a: 'Granite is generally harder and more resistant to acids/staining, making it ideal for heavy kitchen use. Marble is best for aesthetics and baking stations.' },
-            { q: 'Does it require sealing?', a: 'Yes, natural stone should be professionally sealed once a year to prevent staining.' }
+            { q: 'Does it require sealing?', a: 'Yes, natural stone should be professionally sealed once a year to prevent staining.' },
+            { q: 'Can I put hot pots directly on the surface?', a: 'Granite is highly heat-resistant, but we still recommend using trivets to avoid localized thermal shock to the stone.' },
+            { q: 'How do I clean my natural stone countertop?', a: 'Use a pH-neutral cleaner or specialized stone soap. Avoid acidic cleaners like lemon or vinegar which can dull the polish.' },
+            { q: 'How many edges can I choose from?', a: 'We offer various edge profiles including Bullnose, Chamfered, Ogee, and Half Bullnose to suit your design style.' }
         ]
     },
     'granite-slabs': {
@@ -119,7 +130,10 @@ const serviceDetails = {
         ],
         faqs: [
             { q: 'What sizes are available?', a: 'We have standard slab sizes as well as custom-cut options to minimize wastage for your project.' },
-            { q: 'Is Indian granite better than imported?', a: 'Indian granite is world-renowned for its hardness and variety, while imported granites often offer unique colors not found locally.' }
+            { q: 'Is Indian granite better than imported?', a: 'Indian granite is world-renowned for its hardness and variety, while imported granites often offer unique colors not found locally.' },
+            { q: 'Can granite be used for stairs?', a: 'Yes, its durability and ability to take an anti-skid groove make it one of the best materials for both internal and external staircases.' },
+            { q: 'Does granite fade in sunlight?', a: 'No, granite is UV-stable and will not fade even when installed in direct sunlight, unlike many synthetic alternatives.' },
+            { q: 'What finishes are available?', a: 'Besides high-polish, we offer Honed (matte), Leathered (textured), and Flamed finishes for different aesthetic and functional needs.' }
         ]
     },
     'marble-stone': {
@@ -139,7 +153,10 @@ const serviceDetails = {
         ],
         faqs: [
             { q: 'Does marble stain easily?', a: 'Marble is porous, so spills should be cleaned immediately. Proper sealing significantly reduces the risk of staining.' },
-            { q: 'Can I use marble in the bathroom?', a: 'Yes, marble is a classic choice for bathrooms, provided it is treated with the correct finish and sealant.' }
+            { q: 'Can I use marble in the bathroom?', a: 'Yes, marble is a classic choice for bathrooms, provided it is treated with the correct finish and sealant.' },
+            { q: 'How often should marble be re-polished?', a: 'Depending on use, marble usually needs professional re-polishing every 3-5 years to maintain its brilliant shine.' },
+            { q: 'Is marble suitable for flooring in high-traffic areas?', a: 'While beautiful, marble is softer than granite. It can be used for flooring but may show wear (patina) over time if traffic is extremely high.' },
+            { q: 'Can you match the veins across different slabs?', a: 'Yes, we specialize in "Book-matching" where slabs are polished on opposite sides to create mirror-image patterns when laid together.' }
         ]
     },
     'commercial-projects': {
@@ -159,7 +176,10 @@ const serviceDetails = {
         ],
         faqs: [
             { q: 'Do you offer custom designs for brands?', a: 'Yes, we can source and cut materials to match specific brand color palettes or design requirements.' },
-            { q: 'Can you handle out-of-state projects?', a: 'We have the logistics capability to supply major commercial projects across Rajasthan and neighboring regions.' }
+            { q: 'Can you handle out-of-state projects?', a: 'We have the logistics capability to supply major commercial projects across Rajasthan and neighboring regions.' },
+            { q: 'Are your commercial tiles slip-rated for public areas?', a: 'Yes, we provide the necessary technical certifications for slip resistance required for commercial occupancy.' },
+            { q: 'Do you provide bulk discounts?', a: 'Absolutely, we offer special B2B pricing for large-scale developments, builder projects, and government tenders.' },
+            { q: 'Can you help with estimation for large blueprints?', a: 'Yes, our team can assist in quantity estimation directly from your architectural floor plans to ensure minimal waste.' }
         ]
     },
     'vitrified-tiles': {
@@ -179,7 +199,10 @@ const serviceDetails = {
         ],
         faqs: [
             { q: 'What is Double Charge vitrified?', a: 'These tiles have a double layer of pigment, making them thicker and more durable for high-traffic areas.' },
-            { q: 'Are they better than natural marble?', a: 'They offer better stain resistance and consistency, while marble offers a more unique, natural feel. It depends on your priority!' }
+            { q: 'Are they better than natural marble?', a: 'They offer better stain resistance and consistency, while marble offers a more unique, natural feel. It depends on your priority!' },
+            { q: 'What is "Full Body" vitrified?', a: 'In these tiles, the color and pattern go all the way through the tile, so if they ever chip, the damage is virtually invisible.' },
+            { q: 'Do vitrified tiles need sealing?', a: 'No, vitrified tiles are non-porous and do not require any sealing or special treatment once installed.' },
+            { q: 'Can they be used on walls?', a: 'Yes, their lightweight yet strong nature makes them an excellent choice for large-format wall cladding for a seamless look.' }
         ]
     }
 };
